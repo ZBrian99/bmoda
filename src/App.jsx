@@ -30,5 +30,4 @@ function App() {
     </div>
   )
 }
-// asdljalkdjsal
 export default App
