@@ -1,16 +1,17 @@
 export const theme = {
 	fonts: {
-		primary: 'Cinzel, serif',
-		secondary: 'Cutive Mono, monospace',
-		tertiary: 'Dancing Script, cursive',
-		quaternary: 'Poiret One, cursive',
+		titulo: '"Cinzel", serif',
+		desc: '"Cutive Mono", monospace',
+		aux: '"Dancing Script", cursive',
+		sub: '"Poiret One", cursive',
+	
 	},
 	colors: {
-		primary: '#007bff', // Azul
-		secondary: '#28a745', // Verde
-		tertiary: '#dc3545', // Rojo
-		quaternary: '#ffc107', // Amarillo
-		quinary: '#17a2b8', // Cyan
-		senary: '#6610f2', // Púrpura
+		marronOscuro: '#514E48', //marronOscuro
+		marronClaro: '#D7C28D ',  //marronClaro
+		marronDefault: ' #A68C5D', //marrondefault
+		gris: '#736F66',//gris
+		blanco: '#FFFFFF', 
+		negro: '#1D1C1B', 
 	},
 };
