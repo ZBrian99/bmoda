@@ -9,21 +9,21 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    
-    font-family: ${({theme})=>theme.fonts.desc};
+    font-family: ${({ theme }) => theme.fonts.desc};
+    margin-top: 200rem;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${({theme})=>theme.fonts.titulo};
+    font-family: ${({ theme }) => theme.fonts.titulo};
   }
   
   p,input {
-  font-family: ${({theme})=>theme.fonts.desc};
-}
+  font-family: ${({ theme }) => theme.fonts.desc};
+  }
   span {
-    font-family: ${({theme})=>theme.fonts.aux};
+    font-family: ${({ theme }) => theme.fonts.aux};
   }
   button{
-    font-family: ${({theme})=>theme.fonts.sub};
+    font-family: ${({ theme }) => theme.fonts.desc};
   }
 `;
