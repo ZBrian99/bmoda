@@ -1,11 +1,14 @@
-import { GlobalStyles } from './styles/GlobalStyles';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './styles/GlobalStyles';
 import { theme } from './styles/theme.js';
 import { ImageOverlay } from './components/visuals/ImageOverlay.jsx';
 import { HorizontalScroll } from './components/HorizontalScroll.jsx';
 import styled from 'styled-components';
 import './styles/test.scss';
 import RandomCard from './components/randoms/RandomCard.jsx';
+import { MenuCategory } from './components/MenuCategory.jsx';
 const data = [
 	{
 		title: 'Aventura en la naturaleza',
@@ -260,25 +263,36 @@ export const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
-			{/* <RandomTest /> */}
+			<Router>
+			<MenuCategory />
+				<Routes>
+					<Route path='/' element={<HorizontalScroll />} />
+					<Route path='/boda' element={<HorizontalScroll />} />
+					<Route path='/recuerdos' element={<HorizontalScroll />} />
+					<Route path='/sitios' element={<HorizontalScroll />} />
+					<Route path='/amigos' element={<HorizontalScroll />} />
+					<Route path='/fotos' element={<HorizontalScroll />} />
+					<Route path='*' element={<Navigate to='/' />} />
+					{/* <RandomTest /> */}
+					{/* <img className='HorizontalScroll-ItemImage' src={'src/assets/images/i2.jpg'} alt={'name'} />
+			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i4.jpg'} alt={'name'} />
+			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i0.jpg'} alt={'name'} /> */}
+					{/* <HorizontalScroll></HorizontalScroll> */}
+					{/* <ImageOverlay imagen='src/assets/images/boda.jpg' /> */}
+					{/* <img className='HorizontalScroll-ItemImage' src={'src/assets/images/i2.jpg'} alt={'name'} />
+			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i4.jpg'} alt={'name'} />
+			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i0.jpg'} alt={'name'} /> */}
+					{/* <HorizontalScroll /> */}
+				</Routes>
+			</Router>
 			{/* <img className='HorizontalScroll-ItemImage' src={'src/assets/images/i2.jpg'} alt={'name'} />
 			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i4.jpg'} alt={'name'} />
 			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i0.jpg'} alt={'name'} /> */}
-			{/* <HorizontalScroll></HorizontalScroll> */}
-			{/* <ImageOverlay imagen='src/assets/images/boda.jpg' /> */}
-			{/* <img className='HorizontalScroll-ItemImage' src={'src/assets/images/i2.jpg'} alt={'name'} />
-			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i4.jpg'} alt={'name'} />
-			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i0.jpg'} alt={'name'} /> */}
-			{/* <HorizontalScroll></HorizontalScroll> */}
-			{/* <img className='HorizontalScroll-ItemImage' src={'src/assets/images/i2.jpg'} alt={'name'} />
-			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i4.jpg'} alt={'name'} />
-			<img className='HorizontalScroll-ItemImage' src={'src/assets/images/i0.jpg'} alt={'name'} /> */}
-			<Container>
+			{/* <Container>
 				{data.map((item, index) => (
 					<RandomCard key={index} index={index} {...item} />
 				))}
-				{/* <RandomCard /> */}
-			</Container>
+			</Container> */}
 		</ThemeProvider>
 	);
 };

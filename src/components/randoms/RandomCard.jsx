@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 
 const CardContainer = styled(motion.div)`
 	position: relative;
-	width: 100%;
+	/* width: 100%; */
+	width: calc(100vw - 1px);
 	height: 100vh;
 	overflow: hidden;
 `;
 
-const Info = styled.div`
+const Info = styled(motion.div)`
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -28,7 +29,7 @@ const Info = styled.div`
 	z-index: 2;
 `;
 
-const Title = styled.h2`
+const Title = styled(motion.h2)`
 	font-size: ${({ fontSize }) => fontSize};
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
@@ -46,7 +47,7 @@ const Title = styled.h2`
 	/* background-color: #333; */
 `;
 
-const Subtitle = styled.h3`
+const Subtitle = styled(motion.h3)`
 	font-size: ${({ fontSize }) => fontSize};
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
@@ -56,7 +57,7 @@ const Subtitle = styled.h3`
 	order: ${({ order }) => order};
 `;
 
-const Description = styled.p`
+const Description = styled(motion.p)`
 	font-size: ${({ fontSize }) => fontSize};
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
@@ -67,7 +68,7 @@ const Description = styled.p`
 	order: ${({ order }) => order};
 `;
 
-const Date = styled.p`
+const Date = styled(motion.p)`
 	font-size: ${({ fontSize }) => fontSize};
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn};
@@ -76,7 +77,7 @@ const Date = styled.p`
 	order: ${({ order }) => order};
 `;
 
-const Link = styled.a`
+const Link = styled(motion.a)`
 	font-size: ${({ fontSize }) => fontSize};
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn};
@@ -111,10 +112,13 @@ const Video = styled.video`
 	width: ${({ width }) => width}px;
 	height: ${({ height }) => height}px;
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	top: 0;
 	left: 0;
-	object-fit: cover;
 	z-index: 1;
+	filter: brightness(0.5);
 `;
 
 const getRandomFontSize = (level) => {
@@ -274,13 +278,6 @@ const getRandomColor = () => {
 // 	return positions;
 // };
 
-
-
-
-
-
-
-
 function generateRandomPositions(totalElements, totalRows, totalColumns) {
 	const positions = [];
 	const occupiedPositions = []; // Array para controlar las posiciones ocupadas
@@ -334,17 +331,6 @@ function generateRandomPositions(totalElements, totalRows, totalColumns) {
 
 	return positions;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 const generateRandomOrderAndAlign = (totalElements) => {
 	const alignOptions = ['flex-start', 'center', 'flex-end'];
@@ -401,17 +387,32 @@ const RandomCard = ({
 	const randomPositions = generateRandomPositions(totalElements, totalRows, totalColumns);
 
 	return (
-		<CardContainer
-			initial={{ opacity: 0, scale: 0.5 }}
-			animate={{ opacity: 1, scale: 1, ...animations }}
-			transition={{ duration: 0.5 }}
-		>
-			{image ? <Image src={image} width={size} height={size} /> : <Background color={backgroundColor} />}
+		<CardContainer>
+			{video ? (
+				<Video
+					src={video}
+					width={size}
+					height={size}
+					autoPlay 
+					loop 
+					muted
+				/>
+			) : image ? (
+				<Image src={image} width={size} height={size} />
+			) : (
+				<Background color={backgroundColor} />
+			)}
+			{/* {image ? <Image src={image} width={size} height={size} /> : <Background color={backgroundColor} />} */}
 			{/* {image ? <Image src={image} width={size} height={size} /> : <Background color={backgroundColor} />} */}
 			{/* {images && images.map((img, index) => <Image key={index} src={img} width={size} height={size} />)} */}
 			{/* {video && <Video src={video} width={size} height={size} />} */}
 			{/* {videos && videos.map((vid, index) => <Video key={index} src={vid} width={size} height={size} />)} */}
-			<Info>
+			<Info
+				initial={{ opacity: 0, x: 100 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ amount: 0.5 }}
+				transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+			>
 				{title && (
 					<Title
 						fontSize={getRandomFontSize(1)}
@@ -420,6 +421,10 @@ const RandomCard = ({
 						gridrow={randomPositions[0].row}
 						alignSelf={randomOrderAndAlign[0].alignSelf}
 						order={randomOrderAndAlign[0].order}
+						initial={{ opacity: 0, x: '-100%' }}
+						whileInView={{ opacity: 1, x: '0%' }}
+						viewport={{ amount: 0.5 }}
+						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{title}
 					</Title>
@@ -432,6 +437,10 @@ const RandomCard = ({
 						gridrow={randomPositions[1].row}
 						alignSelf={randomOrderAndAlign[1].alignSelf}
 						order={randomOrderAndAlign[1].order}
+						initial={{ opacity: 0, y: -100 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ amount: 0.5 }}
+						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{subtitle}
 					</Subtitle>
@@ -444,6 +453,10 @@ const RandomCard = ({
 						gridrow={randomPositions[2].row}
 						alignSelf={randomOrderAndAlign[2].alignSelf}
 						order={randomOrderAndAlign[2].order}
+						initial={{ opacity: 0, x: 100 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						viewport={{ amount: 0.5 }}
+						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{description}
 					</Description>
@@ -456,6 +469,10 @@ const RandomCard = ({
 						gridrow={randomPositions[3].row}
 						alignSelf={randomOrderAndAlign[3].alignSelf}
 						order={randomOrderAndAlign[3].order}
+						initial={{ opacity: 0, y: 100 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ amount: 0.5 }}
+						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{date}
 					</Date>
@@ -469,6 +486,10 @@ const RandomCard = ({
 						gridrow={randomPositions[4].row}
 						alignSelf={randomOrderAndAlign[4].alignSelf}
 						order={randomOrderAndAlign[4].order}
+						initial={{ opacity: 0, scale: 0.5 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						viewport={{ amount: 0.5 }}
+						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						Link
 					</Link>
