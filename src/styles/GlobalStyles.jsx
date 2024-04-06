@@ -10,7 +10,11 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.fonts.desc};
-    margin-top: 200rem;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    width: 100%;
+    min-height: 100vh;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
   
   h1, h2, h3, h4, h5, h6 {
