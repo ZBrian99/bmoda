@@ -294,42 +294,87 @@
 }
 
 .top {
-	background-color: lightcoral;
-	height: 50rem;
+  height: 100rem;
 	width: 100%;
+  background-color: lightcoral;
 }
 
 .bottom {
 	background-color: lightblue;
-	height: 50rem;
+	height: 100rem;
 	width: 100%;
 }
 
 .HorizontalScroll {
+	// !clave
 	position: relative;
-	background-color: lightgrey;
-	height: 100rem;
-  &-Sticky{
-    display: flex;
-		gap: 1rem;
+	// height: calc((100vw - 17px) * 7);
+  // height: 700vw;
+	// !clave
+
+	// background-color: lightgrey;
+	&-Sticky {
+		// !clave
+		position: sticky;
 		top: 0;
-		height: 100vh;
-    background-color: #814141;
-    position: sticky;
-    overflow: hidden;
-  }
-	&-Container {
+		overflow: hidden;
 		display: flex;
+		// !clave
+
 		gap: 1rem;
-		height: 100vh;
-    background-color: #333;
+		// height: 100vh;
+		// background-color: #814141;
+	}
+	&-Container {
+		// !clave
+		display: flex;
+		// !clave
+    // transform: translateX(-15015px);
+		gap: 1rem;
+		// background-color: #333;
 	}
 	&-Item {
+		// !clave
+		width: calc(100vw - 17px);
+    // width: 100vw;
+		height: 100vh;
+		// altura puede ser definida por el padre
+		// !clave
+
+		// background-color: lightgreen;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3rem;
+		font-weight: bold;
+		border: 1px solid red;
     position: relative;
-		margin: 1rem 0;
-		background-color: lightgreen;
-		height: 500px;
-		// width: calc(100vw - 17px);
-		width: 500px;
+		
+		
+		&Image {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+      filter: brightness(0.5);
+		}
+    &Info {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 5rem;
+      color: white;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+		}
+		&Title {
+      font-size: 2rem;
+		}
+		&Price {
+      font-size: 1rem;
+		}
 	}
 }
