@@ -1,344 +1,38 @@
-@keyframes animation-step {
-	0% {
-		transform: scale(1);
-		opacity: 1;
-		background-color: red;
-	}
-	20% {
-		transform: rotate(20deg);
-		opacity: 0.8;
-		background-color: orange;
-	}
-	40% {
-		transform: skewX(20deg);
-		opacity: 0.6;
-		background-color: yellow;
-	}
-	60% {
-		transform: skewY(-20deg);
-		opacity: 0.8;
-		background-color: green;
-	}
-	80% {
-		transform: rotate(-20deg);
-		opacity: 1;
-		background-color: blue;
-	}
-	100% {
-		transform: scale(1);
-		opacity: 1;
-		background-color: purple;
-	}
-}
-
-@keyframes animation-constant {
-	0% {
-		background-color: red;
-	}
-	20% {
-		background-color: orange;
-	}
-	40% {
-		background-color: yellow;
-	}
-	60% {
-		background-color: green;
-	}
-	80% {
-		background-color: blue;
-	}
-	100% {
-		background-color: purple;
-	}
-}
-
-// .container {
-// 	width: 100%;
-// 	background-color: #333;
-// 	display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// 	min-height: 10rem;
-//   gap: 3rem;
-// 	// background-color: lightblue;
-//   overflow: hidden;
-
-// }
-
-.element {
-	display: flex;
-	width: 10rem;
-	height: 10rem;
-	font-size: 1rem;
-	font-weight: 800;
-	transition: all 1s ease-out;
-	border-radius: 1rem;
-	transform: translateY(50%);
-	opacity: 0;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	& > span {
-		background-color: rgb(0, 0, 0, 0.1);
-	}
-}
-
-.isVisible {
-	opacity: 1;
-	transform: translateY(0%);
-}
-/////////////////////
-///
-///
-///
-.cards-container {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 1rem 0;
-	background-color: lightpink;
-}
-.test-card {
-	background-color: lightblue;
-	overflow: hidden;
-	width: 10%;
-	height: 5rem;
-	position: relative;
-	z-index: 1;
-	// opacity: 0;
-	// transform: translateY(100%);
-}
-.click {
-	background-color: red;
-}
-
-////////////////////
-///
-///
-///
-
-/* Equivalentes para las clases de Tailwind */
-
-// .bg-neutral-800 {
-//   background-color: #2d3748; /* Este color puede variar dependiendo de tu configuración de Tailwind */
-// }
-
-// .flex {
-//   display: flex;
-// }
-
-// .h-48 {
-//   height: 12rem; /* 48 * 0.25rem */
-// }
-
-// .items-center {
-//   align-items: center;
-// }
-
-// .justify-center {
-//   justify-content: center;
-// }
-
-// .font-semibold {
-//   font-weight: 600;
-// }
-
-// .uppercase {
-//   text-transform: uppercase;
-// }
-
-// .text-neutral-500 {
-//   color: #718096; /* Este color puede variar dependiendo de tu configuración de Tailwind */
-// }
-
-// .relative {
-//   position: relative;
-// }
-
-// .h-300vh {
-//   height: 300vh;
-// }
-
-// .bg-neutral-900 {
-//   background-color: #1a202c; /* Este color puede variar dependiendo de tu configuración de Tailwind */
-// }
-
-// .sticky {
-//   position: sticky;
-// }
-
-// .top-0 {
-//   top: 0;
-// }
-
-// .overflow-hidden {
-//   overflow: hidden;
-// }
-
-// .gap-4 {
-//   gap: 1rem; /* 4 * 0.25rem */
-// }
-
-// .group {
-//   /* No hay un equivalente directo en CSS puro para la clase de grupo de Tailwind */
-// }
-
-// .h-450px {
-//   height: 450px;
-// }
-
-// .w-450px {
-//   width: 450px;
-// }
-
-// .bg-neutral-200 {
-//   background-color: #edf2f7; /* Este color puede variar dependiendo de tu configuración de Tailwind */
-// }
-
-// .absolute {
-//   position: absolute;
-// }
-
-// .inset-0 {
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-
-// .z-0 {
-//   z-index: 0;
-// }
-
-// .transition-transform {
-//   transition-property: transform;
-// }
-
-// .duration-300 {
-//   transition-duration: 300ms;
-// }
-
-// .group-hover\:scale-110 {
-//   /* No hay un equivalente directo en CSS puro para esta clase de Tailwind */
-// }
-
-// .z-10 {
-//   z-index: 10;
-// }
-
-// .grid {
-//   display: grid;
-// }
-
-// .place-content-center {
-//   place-content: center;
-// }
-
-// .bg-gradient-to-br {
-//   background-image: linear-gradient(to bottom right, transparent 20%, transparent 0%);
-// }
-
-// .from-white\/20 {
-//   --tw-gradient-from: rgba(255, 255, 255, 0.2);
-// }
-
-// .to-white\/0 {
-//   --tw-gradient-to: rgba(255, 255, 255, 0);
-// }
-
-// .p-8 {
-//   padding: 2rem; /* 8 * 0.25rem */
-// }
-
-// .text-6xl {
-//   font-size: 4rem; /* 6 * 0.67rem */
-// }
-
-// .font-black {
-//   font-weight: 900;
-// }
-
-// .text-white {
-//   color: #ffffff;
-// }
-
-// .backdrop-blur-lg {
-//   backdrop-filter: blur(40px);
-// }
-
-// .card{
-//   // background-color: #3a265e;
-//   // border-radius: 1rem;
-//   // box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-//   // overflow: hidden;
-//   // position: relative;
-//   // z-index: 1;
-//   // height: 30rem;
-//   // width: 100vw;
-//    position: relative;
-// 		margin: 1rem 0;
-// 		background-color: lightgreen;
-// 		height: 500px;
-// // 		// width: calc(100vw - 17px);
-// 		width: 500px;
-// }
-
-// ///////////////////
-// ///
-// ///
-// ///
-// ///
-.container {
-	background-color: lightslategray;
-}
-
-.top {
-  height: 100rem;
-	width: 100%;
-  background-color: lightcoral;
-}
-
-.bottom {
-	background-color: lightblue;
-	height: 100rem;
-	width: 100%;
-}
-
+//componente padre principal
 .HorizontalScroll {
 	// !clave
 	position: relative;
+	//si la altura se calcula por fuera no es necesario ponerla aqui, pero si no se calcula cada multiplo es cada vista
 	// height: calc((100vw - 17px) * 7);
-  // height: 700vw;
 	// !clave
 
 	// background-color: lightgrey;
 	&-Sticky {
 		// !clave
+		//clave style para que se quede pegado al top, overflow hidden para que no se vea el scroll, display flex para que los elementos se pongan uno al lado del otro y ocupen el 100% del ancho
 		position: sticky;
 		top: 0;
 		overflow: hidden;
 		display: flex;
 		// !clave
-
 		gap: 1rem;
-		// height: 100vh;
 		// background-color: #814141;
 	}
 	&-Container {
 		// !clave
+		//para que cada elemento se ponga uno al lado del otro
 		display: flex;
 		// !clave
-    // transform: translateX(-15015px);
 		gap: 1rem;
 		// background-color: #333;
 	}
 	&-Item {
 		// !clave
+		//dependiendo el diseño restar los 17px puede no ser necesario es lo que mide la scrollbar
 		width: calc(100vw - 17px);
-    // width: 100vw;
-		height: 100vh;
+		// width: 100vw;
 		// altura puede ser definida por el padre
+		height: 100vh;
 		// !clave
 
 		// background-color: lightgreen;
@@ -347,34 +41,56 @@
 		align-items: center;
 		font-size: 3rem;
 		font-weight: bold;
-		border: 1px solid red;
-    position: relative;
-		
-		
+		position: relative;
+
+		// border: 1px solid black;
+		background-color: lightgreen;
+		&:nth-child(even) {
+			background-color: lightsalmon;
+		}
+		//estilos de la card de ejemplo todos secundarios
 		&Image {
 			width: 100%;
-			height: auto;
+			height: 100%;
 			object-fit: cover;
-      filter: brightness(0.5);
+			filter: brightness(0.5);
 		}
-    &Info {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      padding: 5rem;
-      color: white;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+		&Info {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			padding: 5rem;
+			color: white;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 		}
 		&Title {
-      font-size: 2rem;
+			font-size: 2rem;
 		}
 		&Price {
-      font-size: 1rem;
+			font-size: 1rem;
 		}
 	}
+}
+
+//estilos genericos de prueba
+
+.container {
+	background-color: lightslategray;
+}
+
+.top {
+	height: 100vh;
+	width: 100%;
+	background-color: lightcoral;
+}
+
+.bottom {
+	background-color: lightblue;
+	height: 100vh;
+	width: 100%;
 }
