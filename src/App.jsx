@@ -247,6 +247,33 @@ const data = [
 		loader: true,
 		animation: 'y',
 	},
+	{
+		title: 'Visita a un museo de arte',
+		subtitle: 'Explorando obras maestras',
+		description: 'Una visita a un museo de arte para apreciar obras maestras de diferentes épocas.',
+		date: '2024-04-29',
+		image: 'src/assets/images/i19.jpg',
+		loader: true,
+		animation: 'y',
+	},
+	{
+		title: 'Visita a un museo de arte',
+		subtitle: 'Explorando obras maestras',
+		description: 'Una visita a un museo de arte para apreciar obras maestras de diferentes épocas.',
+		date: '2024-04-29',
+		image: 'src/assets/images/i19.jpg',
+		loader: true,
+		animation: 'y',
+	},
+	{
+		title: 'Visita a un museo de arte',
+		subtitle: 'Explorando obras maestras',
+		description: 'Una visita a un museo de arte para apreciar obras maestras de diferentes épocas.',
+		date: '2024-04-29',
+		image: 'src/assets/images/i19.jpg',
+		loader: true,
+		animation: 'y',
+	},
 ];
 
 const Container = styled.div`

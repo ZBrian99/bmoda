@@ -8,34 +8,38 @@ import { motion } from 'framer-motion';
 const CardContainer = styled(motion.div)`
 	position: relative;
 	/* width: 100%; */
-	width: calc((100vw - 1px) / 2);
+	width: 50vw;
+	/* width: calc((100vw - 1px) * 0.5); */
+	@media screen and (max-width: 45rem) {
+		width: calc((100vw - 1px));
+	}
 	height: 100vh;
 	overflow: hidden;
-	background-color: #000000;
 `;
 
 const Info = styled(motion.div)`
 	position: relative;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	/* display: grid; */
+	/* grid-template-columns: repeat(3, 1fr); */
 	/* grid-auto-rows: minmax(100px, auto); */
-	grid-template-rows: repeat(3, 1fr);
+	/* grid-template-rows: repeat(3, 1fr); */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	gap: 1rem;
 	width: 100%;
 	height: 100%;
 	padding: 3rem;
-	@media screen and (max-width: 45rem) {
+	/* @media screen and (max-width: 45rem) {
 		padding: 1rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
+	} */
 	z-index: 2;
+	color: ${({ color }) => color};
 `;
 
 const Title = styled(motion.h2)`
 	font-family: ${({ theme }) => theme.fonts.titulo};
-	color: ${({ theme }) => theme.colors.white};
+	/* color: ${({ theme }) => theme.colors.white}; */
 
 	font-size: ${({ fontSize }) => fontSize};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
@@ -63,7 +67,7 @@ const Subtitle = styled(motion.h3)`
 
 const Description = styled(motion.p)`
 	font-family: ${({ theme }) => theme.fonts.desc};
-	color: ${({ theme }) => theme.colors.light};
+	/* color: ${({ theme }) => theme.colors.light}; */
 
 	font-size: ${({ fontSize }) => fontSize};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
@@ -78,7 +82,7 @@ const Description = styled(motion.p)`
 
 const Date = styled(motion.p)`
 	font-family: ${({ theme }) => theme.fonts.aux};
-	color: ${({ theme }) => theme.colors.light};
+	/* color: ${({ theme }) => theme.colors.light}; */
 
 	font-size: ${({ fontSize }) => fontSize};
 	grid-column: ${({ gridcolumn }) => gridcolumn};
@@ -110,8 +114,9 @@ const Background = styled.div`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #000000;
 	z-index: 1;
+	/* background-color: #0a0a0a; */
+	background-color: ${({ bgColor }) => bgColor};
 	/* opacity: 0.2; */
 `;
 const Image = styled(motion.img)`
@@ -145,7 +150,14 @@ const Video = styled(motion.video)`
 	z-index: 1;
 	filter: brightness(0.5);
 `;
+function chooseRandomColor() {
+	const colors = ['#000000', '#FFFFFF'];
+	const randomIndex = Math.floor(Math.random() * colors.length);
+	const primaryColor = colors[randomIndex];
+	const secondaryColor = colors[(randomIndex + 1) % 2];
 
+	return { primary: primaryColor, secondary: secondaryColor };
+}
 const getRandomFontSize = (level) => {
 	// Define los rangos de tamaños de fuente para cada nivel de importancia en vw
 	const fontSizeRanges = {
@@ -465,16 +477,6 @@ const generateRandomAnimation = () => {
 		},
 	};
 };
-const getRandomSelectedColor = () => {
-	// Define una lista de colores
-	const colors = ['white', 'black'];
-
-	// Genera un índice aleatorio para seleccionar un color de la lista
-	const randomIndex = Math.floor(Math.random() * colors.length);
-
-	// Devuelve el color seleccionado
-	return colors[randomIndex];
-};
 const totalElements = 5;
 const totalRows = 3;
 const totalColumns = 3;
@@ -495,15 +497,13 @@ const RandomSideCard = ({
 	animation,
 }) => {
 	const randomOrderAndAlign = generateRandomOrderFlexAndTextAlign(totalElements);
-	const { backgroundColor } = getRandomColor();
 	const randomPositions = generateRandomPositions(totalElements, totalRows, totalColumns);
 	const randomScale = getRandomScale();
-
 	const { scale, x, y } = getRandomScaleAndPosition();
-
+	const { primary, secondary } = chooseRandomColor();
 	return (
 		<CardContainer initial='hidden' whileInView='show' exit='hidden' viewport={{ amount: 0.5 }}>
-			{video ? (
+			{/* {video ? (
 				<Video
 					src={video}
 					width={size}
@@ -573,14 +573,14 @@ const RandomSideCard = ({
 				/>
 			) : (
 				<div>Error</div>
-			)}
-
+			)} */}
+			<Background bgColor={primary} />
 			<Info
+				color={secondary}
 				// initial={{ opacity: 0, x: 100 }}
 				// whileInView={{ opacity: 1, x: 0 }}
 				// viewport={{ amount: 0.3 }}
 				// transition={{duration:getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
-
 				variants={{
 					hidden: {
 						// clipPath: getRandomPolygonPair('circle').hidden,
@@ -611,7 +611,8 @@ const RandomSideCard = ({
 					staggerChildren: 0.5,
 				}}
 			>
-				{title && (
+				{index ? (
+					// {title && (
 					<Title
 						fontSize={getRandomFontSize(1)}
 						gridcolumn={randomPositions[0].column}
@@ -631,10 +632,9 @@ const RandomSideCard = ({
 						// viewport={{ amount: 0.3 }}
 						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
-						{title}
+						{` ${index} ${title ? title : ''}`}
 					</Title>
-				)}
-				{subtitle && (
+				) : subtitle ? (
 					<Subtitle
 						fontSize={getRandomFontSize(2)}
 						gridcolumn={randomPositions[1].column}
@@ -656,6 +656,8 @@ const RandomSideCard = ({
 					>
 						{subtitle}
 					</Subtitle>
+				) : (
+					''
 				)}
 				{description && (
 					<Description

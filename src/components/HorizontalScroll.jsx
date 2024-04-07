@@ -4,6 +4,7 @@ import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 import '../styles/test.scss';
 import RandomCard from './randoms/RandomCard';
 import RandomSideCard from './randoms/RandomSide';
+import RandomSideMulty from './randoms/RandomSideMulty';
 
 const data = [
 	{
@@ -110,6 +111,14 @@ const data = [
 		animation: 'fade',
 	},
 	{
+		title: 'Promesas de amor en nuestra boda',
+		subtitle: 'Comprometiéndonos a caminar juntos',
+		date: '2024-04-21',
+		image: 'src/assets/boda/boda_16.webp',
+		loader: true,
+		animation: 'rotate',
+	},
+	{
 		title: 'Pasión en nuestra boda',
 		subtitle: 'Celebrando el amor con intensidad',
 		description:
@@ -204,7 +213,250 @@ const data = [
 		animation: 'y',
 	},
 ];
-
+const dataMulty = [
+	{
+		title: 'Recuerdos de nuestra boda',
+		subtitle: 'Compartiendo momentos inolvidables',
+		description:
+			'Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.',
+		date: '2024-04-06',
+		link: '#',
+		images: ['src/assets/boda/boda_0.webp', 'src/assets/boda/boda_0.webp', 'src/assets/boda/boda_0.webp'],
+		videos: [
+			'src/assets/videos/video_0.mp4',
+			'src/assets/videos/video_5.mp4',
+			'src/assets/videos/video_6.mp4',
+		],
+		loader: false,
+		animation: 'fade',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_5.webp', 'src/assets/boda/boda_1.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Romanticismo en nuestra boda',
+		subtitle: 'Celebrando nuestro amor frente a la naturaleza',
+		date: '2024-04-07',
+		images: ['src/assets/boda/boda_13.webp', 'src/assets/boda/boda_15.webp', 'src/assets/boda/boda_4.webp'],
+		loader: true,
+		animation: 'scale',
+	},
+	{
+		subtitle: 'Descubriendo la belleza del amor',
+		description:
+			'Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.',
+		date: '2024-04-08',
+		link: '#',
+		images: ['src/assets/boda/boda_3.webp', 'src/assets/boda/boda_3.webp', 'src/assets/boda/boda_0.webp'],
+		videos: [
+			'src/assets/videos/video_9.mp4',
+			'src/assets/videos/video_8.mp4',
+			'src/assets/videos/video_7.mp4',
+		],
+		loader: false,
+		animation: 'x',
+	},
+	{
+		description:
+			'Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.',
+		date: '2024-04-09',
+		images: ['src/assets/boda/boda_4.webp', 'src/assets/boda/boda_5.webp', 'src/assets/boda/boda_8.webp'],
+		loader: true,
+		animation: 'y',
+	},
+	{
+		title: 'Recuerdos de nuestra boda',
+		subtitle: 'Compartiendo momentos inolvidables',
+		description:
+			'Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.',
+		date: '2024-04-06',
+		link: '#',
+		images: ['src/assets/boda/boda_2.webp', 'src/assets/boda/boda_9.webp', 'src/assets/boda/boda_0.webp'],
+		videos: [
+			'src/assets/videos/video_3.mp4',
+			'src/assets/videos/video_9.mp4',
+			'src/assets/videos/video_1.mp4',
+		],
+		loader: false,
+		animation: 'fade',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_7.webp', 'src/assets/boda/boda_3.webp', 'src/assets/boda/boda_0.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Romanticismo en nuestra boda',
+		subtitle: 'Celebrando nuestro amor frente a la naturaleza',
+		date: '2024-04-07',
+		images: ['src/assets/boda/boda_2.webp', 'src/assets/boda/boda_5.webp', 'src/assets/boda/boda_6.webp'],
+		loader: true,
+		animation: 'scale',
+	},
+	{
+		subtitle: 'Descubriendo la belleza del amor',
+		description:
+			'Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.',
+		date: '2024-04-08',
+		link: '#',
+		images: [
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_0.webp',
+			'src/assets/boda/boda_0.webp',
+		],
+		videos: [
+			'src/assets/videos/video_0.mp4',
+			'src/assets/videos/video_5.mp4',
+			'src/assets/videos/video_1.mp4',
+		],
+		loader: false,
+		animation: 'x',
+	},
+	{
+		description:
+			'Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.',
+		date: '2024-04-09',
+		images: ['src/assets/boda/boda_4.webp', 'src/assets/boda/boda_8.webp', 'src/assets/boda/boda_5.webp'],
+		loader: true,
+		animation: 'y',
+	},
+	{
+		title: 'Recuerdos de nuestra boda',
+		subtitle: 'Compartiendo momentos inolvidables',
+		description:
+			'Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.',
+		date: '2024-04-06',
+		link: '#',
+		images: ['src/assets/boda/boda_0.webp', 'src/assets/boda/boda_0.webp', 'src/assets/boda/boda_0.webp'],
+		videos: [
+			'src/assets/videos/video_0.mp4',
+			'src/assets/videos/video_1.mp4',
+			'src/assets/videos/video_2.mp4',
+		],
+		loader: false,
+		animation: 'fade',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_6.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_6.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_6.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_6.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Romanticismo en nuestra boda',
+		subtitle: 'Celebrando nuestro amor frente a la naturaleza',
+		date: '2024-04-07',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_2.webp', 'src/assets/boda/boda_6.webp'],
+		loader: true,
+		animation: 'scale',
+	},
+	{
+		subtitle: 'Descubriendo la belleza del amor',
+		description:
+			'Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.',
+		date: '2024-04-08',
+		link: '#',
+		images: [
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_0.webp',
+			'src/assets/boda/boda_0.webp',
+		],
+		videos: [
+			'src/assets/videos/video_5.mp4',
+			'src/assets/videos/video_0.mp4',
+			'src/assets/videos/video_1.mp4',
+		],
+		loader: false,
+		animation: 'x',
+	},
+	{
+		title: 'Unión familiar en nuestra boda',
+		description:
+			'Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.',
+		link: '#',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_6.webp', 'src/assets/boda/boda_7.webp'],
+		loader: true,
+		animation: 'rotate',
+	},
+	{
+		title: 'Romanticismo en nuestra boda',
+		subtitle: 'Celebrando nuestro amor frente a la naturaleza',
+		date: '2024-04-07',
+		images: ['src/assets/boda/boda_1.webp', 'src/assets/boda/boda_2.webp', 'src/assets/boda/boda_6.webp'],
+		loader: true,
+		animation: 'scale',
+	},
+	{
+		subtitle: 'Descubriendo la belleza del amor',
+		description:
+			'Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.',
+		date: '2024-04-08',
+		link: '#',
+		images: [
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_3.webp',
+			'src/assets/boda/boda_0.webp',
+			'src/assets/boda/boda_0.webp',
+		],
+		videos: [
+			'src/assets/videos/video_5.mp4',
+			'src/assets/videos/video_0.mp4',
+			'src/assets/videos/video_1.mp4',
+		],
+		loader: false,
+		animation: 'x',
+	},
+	{
+		description:
+			'Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.',
+		date: '2024-04-09',
+		images: ['src/assets/boda/boda_6.webp', 'src/assets/boda/boda_8.webp', 'src/assets/boda/boda_4.webp'],
+		loader: true,
+		animation: 'y',
+	},
+];
 // Función para desordenar aleatoriamente un array
 function shuffleArray(array) {
 	const shuffledArray = [...array];
@@ -234,16 +486,25 @@ export const HorizontalScroll = () => {
 
 	//calcular el ancho total del scroll por cantidad de elementos que simunan una vista entera, se puede modificar
 	const dataOffset = data.length - 1;
+	// const dataOffset = data.length - 1;
 
 	//multiplicacion del ancho de la ventana por la cantidad de elementos o vistas a mostrar
 	const totalWidth = windowOffset * dataOffset;
+
+	// const cardWidth = 1;
+	// const sideCardWidth = 0.5;
+	// const dataOffset = (cardWidth + sideCardWidth) * (data.length - 1);
+
+	// Cálculo del ancho total de la sección de scroll
+	// const totalWidth = windowOffset * dataOffset;
 
 	//ejemplo sin efecto de resorte
 	// const x = useTransform(scrollYProgress, [0, 1], [0, totalWidth]);
 
 	//ejemplo con efecto de resorte
 	//propiedad offset de useTransform posible solucione a todos los problemas
-	const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth]), {
+	const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth*0.75]), {
+		// const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth]), {
 		//los siguientes valores se pueden modificar para obtener un efecto diferente de scroll
 		stiffness: 150,
 		damping: 30,
@@ -256,26 +517,27 @@ export const HorizontalScroll = () => {
 			setInnerWidth(window.innerWidth);
 			console.log('reload size');
 		};
-
+		
 		window.addEventListener('resize', handleResize);
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
 
+
+// Array que contiene instancias de los tres tipos de componentes
+const components = [RandomCard, RandomSideMulty, RandomSideCard];
 	return (
 		//contenedor generico con componente generico para rellenar espacio
 		<div className='container'>
-			{/* <div className='top'></div> */}
-			{/* <div className='top'></div> */}
-			{/* <div className='top'></div> */}
 			{/* empieza aqui */}
 			<section
 				ref={targetRef}
 				className='HorizontalScroll'
 				//importante el estilo para que el contenedor se ajuste al tamaño de los elementos, se puede modificar o buscar otra solucion para obtener el mismo resultado o uno diferente
 				style={{
-					height: ` calc((100vw - 17px) * ${data.length - 1})`,
+					height: ` calc((100vw - 17px) * ${dataOffset})`,
+					// height: ` calc((100vw - 17px) * ${data.length - 1})`,
 				}}
 			>
 				{/* contenedor sticky padre del contenedor que se va a mover */}
@@ -283,58 +545,34 @@ export const HorizontalScroll = () => {
 					{/* Contenedor que se va a mover, todos los hijos seran quienes se vayan mostrando y style x representa un transform translateX(x) x va de 0 a -100% en este cado para un movimiento hacia da derecha */}
 					<motion.div style={{ x }} className='HorizontalScroll-Container '>
 						{/* mapeo de elementos */}
-						{/* {shuffleArray(data).map((item, index) => (
-							<>
-								<RandomCard key={index} index={index} {...item} />
-								<RandomSideCard key={index} index={index} {...item} />
-							</>
+						{/* {shuffleArray(dataMulty).map((item, index) => (
+							<RandomCard key={index} index={index} {...item} />
 						))} */}
-						{shuffleArray(
-							data.map((item, index) =>
+						{shuffleArray(dataMulty.map((item, index) => {
+							const Component = components[Math.floor(Math.random() * components.length)];
+							return <Component key={index} index={index} {...item} />;
+						}))}
+						{/* {shuffleArray(
+							dataMulty.map((item, index) =>
 								index % 2 === 0 ? (
-									<RandomCard key={item.id || index} {...item} />
+									<RandomSideMulty key={index} index={index} {...item} />
 								) : (
-									<RandomSideCard key={item.id || index} {...item} />
+									<RandomSideCard key={index} index={index} {...item} />
 								)
 							)
 						)}
+						{shuffleArray(
+							dataMulty.map((item, index) =>
+								index % 2 === 0 ? (
+									<RandomSideMulty key={index} index={index} {...item} />
+								) : (
+									<RandomSideCard key={index} index={index} {...item} />
+								)
+							)
+						)} */}
 					</motion.div>
 				</div>
 			</section>
-			{/* <div className='bottom'></div> */}
-			{/* <div className='bottom'></div> */}
-			{/* <div className='bottom'></div> */}
 		</div>
 	);
 };
-
-// // card generica a modo de prueba
-// const Card = ({ id, img, name, price }) => {
-// 	const [imageLoaded, setImageLoaded] = useState(false);
-
-// 	useEffect(() => {
-// 		const loadImage = () => {
-// 			const image = new Image();
-// 			image.src = img;
-// 			image.onload = () => setImageLoaded(true);
-// 		};
-
-// 		loadImage();
-// 	}, [img]);
-
-// 	return (
-// 		<motion.div key={id} className='HorizontalScroll-Item'>
-// 			{/* {imageLoaded ? ( */}
-// 			<img className='HorizontalScroll-ItemImage' src={img} alt={name} />
-
-// 			{/* // ) : ( */}
-// 			{/* // 	<div>Loading...</div> */}
-// 			{/* // )} */}
-
-// 			<div className='HorizontalScroll-ItemInfo'>
-// 				<h3 className='HorizontalScroll-ItemTitle'>{name}</h3>
-// 				<p className='HorizontalScroll-ItemPrice'>${price}</p>
-// 			</div>
-// 		</motion.div>
-// 	);
-// };

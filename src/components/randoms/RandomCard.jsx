@@ -11,7 +11,6 @@ const CardContainer = styled(motion.div)`
 	width: calc(100vw - 1px);
 	height: 100vh;
 	overflow: hidden;
-	background-color: #000000;
 `;
 
 const Info = styled(motion.div)`
@@ -25,7 +24,7 @@ const Info = styled(motion.div)`
 	height: 100%;
 	padding: 3rem;
 	@media screen and (max-width: 45rem) {
-		padding: 1rem;
+		/* padding: 1rem; */
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -504,7 +503,7 @@ const RandomCard = ({
 					muted
 					variants={{
 						hidden: {
-							opacity: 0.3,
+							// opacity: 0.3,
 							scale,
 							x,
 							y,
@@ -516,7 +515,45 @@ const RandomCard = ({
 							// },
 						},
 						show: {
-							opacity: 1,
+							// opacity: 1,
+							...getRandomScaleAndPosition(),
+							// clipPath: getRandomPolygonPair('circle').show,
+							// transition: {
+							// 	type: 'ease',
+							// 	ease: 'easeInOut',
+							// 	duration: getRandomDuration(1.5),
+							// },
+						},
+					}}
+					transition={{
+						type: 'ease',
+						ease: 'easeInOut',
+						duration: getRandomDuration(1.5),
+					}}
+				/>
+			) : videos && videos[0] ? (
+				<Video
+					src={videos[0]}
+					width={size}
+					height={size}
+					autoPlay
+					loop
+					muted
+					variants={{
+						hidden: {
+							// opacity: 0.3,
+							scale,
+							x,
+							y,
+							// clipPath: getRandomPolygonPair('circle').hidden,
+							// transition: {
+							// 	type: 'ease',
+							// 	ease: 'easeInOut',
+							// 	duration: getRandomDuration(1.5),
+							// },
+						},
+						show: {
+							// opacity: 1,
 							...getRandomScaleAndPosition(),
 							// clipPath: getRandomPolygonPair('circle').show,
 							// transition: {
@@ -539,7 +576,7 @@ const RandomCard = ({
 					height={size}
 					variants={{
 						hidden: {
-							opacity: 0.3,
+							// opacity: 0.3,
 							scale,
 							x,
 							y,
@@ -551,7 +588,37 @@ const RandomCard = ({
 							// },
 						},
 						show: {
-							opacity: 1,
+							// opacity: 1,
+							...getRandomScaleAndPosition(),
+							// clipPath: getRandomPolygonPair('circle').show,
+						},
+					}}
+					transition={{
+						type: 'ease',
+						ease: 'easeInOut',
+						duration: getRandomDuration(1.5),
+					}}
+				/>
+			) : images && images[0] ? (
+				<Image
+					src={images[0]}
+					width={size}
+					height={size}
+					variants={{
+						hidden: {
+							// opacity: 0.3,
+							scale,
+							x,
+							y,
+							// clipPath: getRandomPolygonPair('circle').hidden,
+							// transition: {
+							// 	type: 'ease',
+							// 	ease: 'easeInOut',
+							// 	duration: getRandomDuration(1.5),
+							// },
+						},
+						show: {
+							// opacity: 1,
 							...getRandomScaleAndPosition(),
 							// clipPath: getRandomPolygonPair('circle').show,
 						},
@@ -602,7 +669,8 @@ const RandomCard = ({
 					staggerChildren: 0.5,
 				}}
 			>
-				{title && (
+				{index && (
+					// {title && (
 					<Title
 						fontSize={getRandomFontSize(1)}
 						gridcolumn={randomPositions[0].column}
@@ -622,7 +690,7 @@ const RandomCard = ({
 						// viewport={{ amount: 0.3 }}
 						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
-						{title}
+						{` ${index} ${title ? title : ''}`}
 					</Title>
 				)}
 				{subtitle && (

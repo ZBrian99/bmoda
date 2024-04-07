@@ -82,7 +82,15 @@
 //estilos genericos de prueba
 
 .container {
-	background-color: lightslategray;
+	// background-color: lightslategray;
+	background-color: #000000;
+  // background-image: url('src/assets/boda/boda_15.webp');
+  background-repeat: no-repeat;
+  // background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+
 }
 
 .top {
