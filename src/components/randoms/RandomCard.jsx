@@ -8,6 +8,7 @@ const CardContainer = styled(motion.div)`
 	width: calc(100vw - 1px);
 	height: 100vh;
 	overflow: hidden;
+	background-color: #000000;
 `;
 
 const Info = styled(motion.div)`
@@ -22,8 +23,8 @@ const Info = styled(motion.div)`
 	padding: 3rem;
 	@media screen and (max-width: 45rem) {
 		padding: 1rem;
-		display: flex; /* Cambia a display flex para una sola columna */
-		flex-direction: column; /* Apila los elementos verticalmente */
+		display: flex;
+		flex-direction: column;
 		justify-content: space-around;
 	}
 	z-index: 2;
@@ -34,14 +35,7 @@ const Title = styled(motion.h2)`
 	color: ${({ color }) => color};
 	grid-column: ${({ gridcolumn }) => gridcolumn} / span 2;
 	grid-row: ${({ gridrow }) => gridrow};
-	/* align-self: flex-end;
-	align-self: center;
-	align-self: flex-start;
-	order: 1;
-	order: 2;
-	order: 3;
-	order: 4; 
-	order: 5; */
+
 	align-self: ${({ alignSelf }) => alignSelf};
 	order: ${({ order }) => order};
 	/* background-color: #333; */
@@ -92,29 +86,36 @@ const Background = styled.div`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: ${({ color }) => color};
+	background-color: #000000;
 	z-index: 1;
+	/* opacity: 0.2; */
 `;
-const Image = styled.img`
+const Image = styled(motion.img)`
 	width: ${({ width }) => width}px;
 	height: ${({ height }) => height}px;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+  object-position: center center;
 	top: 0;
 	left: 0;
 	z-index: 1;
+	border: none;
+	outline: none;
 	filter: brightness(0.5);
 `;
 
-const Video = styled.video`
+const Video = styled(motion.video)`
 	width: ${({ width }) => width}px;
 	height: ${({ height }) => height}px;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: center center;
+	border: none;
+	outline: none;
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -164,119 +165,6 @@ const getRandomColor = () => {
 	// Devolver el color de texto
 	return { backgroundColor: `rgb(${r}, ${g}, ${b})`, textColor };
 };
-// const generateRandomPositions = (totalElements, totalRows, totalColumns) => {
-// 	const positions = [];
-// 	const totalGridCells = totalRows * totalColumns;
-
-// 	// Verifica que el número de elementos no sea mayor que el número total de celdas en el grid
-// 	if (totalElements > totalGridCells) {
-// 		throw new Error('El número de elementos es mayor que el número total de celdas en el grid');
-// 	}
-
-// 	// Genera posiciones aleatorias únicas para cada elemento
-// 	for (let i = 0; i < totalElements; i++) {
-// 		let position;
-// 		do {
-// 			// Genera una posición aleatoria dentro del grid
-// 			const row = Math.floor(Math.random() * totalRows) + 1;
-// 			const column = Math.floor(Math.random() * totalColumns) + 1;
-// 			position = { row, column };
-// 		} while (positions.some((pos) => pos.row === position.row && pos.column === position.column));
-
-// 		// Agrega la posición única al array de posiciones
-// 		positions.push(position);
-// 	}
-
-// 	return positions;
-// };
-
-// const generateRandomPositions = (totalElements, totalRows, totalColumns) => {
-// 	const positions = [];
-// 	const totalGridCells = totalRows * totalColumns;
-
-// 	// Verifica que el número de elementos no sea mayor que el número total de celdas en el grid
-// 	if (totalElements > totalGridCells) {
-// 		throw new Error('El número de elementos es mayor que el número total de celdas en el grid');
-// 	}
-
-// 	// Lista de filas ocupadas
-// 	const occupiedRows = new Set();
-
-// 	// Genera posiciones aleatorias únicas para cada elemento
-// 	for (let i = 0; i < totalElements; i++) {
-// 		let position;
-// 		do {
-// 			// Genera una posición aleatoria dentro del grid
-// 			let row, column;
-
-// 			// Si es uno de los primeros tres elementos
-// 			if (i < 3) {
-// 				// Asigna una fila aleatoria
-// 				if (i === 0) {
-// 					row = Math.floor(Math.random() * totalRows) + 1;
-// 				} else if (i === 1) {
-// 					do {
-// 						row = Math.floor(Math.random() * totalRows) + 1;
-// 					} while (row === positions[0].row);
-// 				} else {
-// 					const remainingRows = Array.from({ length: totalRows }, (_, index) => index + 1).filter(
-// 						(r) => !occupiedRows.has(r) && r !== positions[0].row && r !== positions[1].row
-// 					);
-// 					row = remainingRows[Math.floor(Math.random() * remainingRows.length)];
-// 				}
-
-// 				// Asigna la columna 1 o 2 alternativamente
-// 				column = i % 2 === 0 ? 1 : 2;
-
-// 				// Marca la fila como ocupada
-// 				occupiedRows.add(row);
-
-// 				// Si la columna es 1, marca también la siguiente columna como ocupada
-// 			if (column === 1) {
-// 				occupiedRows.add(row);
-// 				occupiedRows.add(row + 1 > totalRows ? 1 : row + 1); // Se marca la siguiente fila como ocupada
-// 			}
-// 			} else {
-// 				// Si no es uno de los primeros tres elementos, puede estar en cualquier columna
-// 				let availableRows = Array.from({ length: totalRows }, (_, index) => index + 1);
-
-// 				if (i === 3) {
-// 					// Para el elemento 3, se excluyen las filas ocupadas por los elementos 1 y 2
-// 					availableRows = availableRows.filter(
-// 						(r) => !occupiedRows.has(r) && r !== positions[0].row && r !== positions[1].row
-// 					);
-// 				} else {
-// 					// Para los elementos restantes, se excluyen las filas ocupadas
-// 					availableRows = availableRows.filter((r) => !occupiedRows.has(r));
-// 				}
-
-// 				// Si no hay filas disponibles, se reinicia la búsqueda
-// 				if (availableRows.length === 0) {
-// 					continue;
-// 				}
-
-// 				row = availableRows[Math.floor(Math.random() * availableRows.length)];
-// 				column = Math.floor(Math.random() * totalColumns) + 1;
-
-// 				// Si la columna es 2, marca también la siguiente columna como ocupada
-// 			if (column === 2) {
-// 				const nextRow = row === totalRows ? 1 : row + 1; // Se ajusta a la primera fila si se alcanza el límite
-// 				occupiedRows.add(nextRow);
-// 			}
-// 			}
-
-// 			position = { row, column };
-// 		} while (
-// 			// Verifica si la posición está ocupada
-// 			positions.some((pos) => pos.row === position.row && pos.column === position.column)
-// 		);
-
-// 		// Agrega la posición única al array de posiciones
-// 		positions.push(position);
-// 	}
-
-// 	return positions;
-// };
 
 function generateRandomPositions(totalElements, totalRows, totalColumns) {
 	const positions = [];
@@ -352,9 +240,176 @@ const generateRandomOrderAndAlign = (totalElements) => {
 
 	return orderArray;
 };
-const totalElements = 5; // Número total de elementos
-const totalRows = 3; // Número total de filas en el grid
-const totalColumns = 3; // Número total de columnas en el grid
+
+const getRandomScale = (level) => {
+	// Si no se proporciona el nivel, generamos uno aleatorio entre 1 y 5
+	if (level === undefined) {
+		level = Math.floor(Math.random() * 5) + 1;
+	}
+
+	// Generar un número aleatorio entre 0 y 1
+	const randomChance = Math.random();
+
+	// Si el número aleatorio es menor que 0.5, devuelve 1 (sin efecto de escala)
+	if (randomChance < 0.5) {
+		return 1;
+	}
+
+	// Define los rangos de escala para cada nivel de importancia
+	// const scaleRanges = {
+	// 	1: { min: 1.1, max: 1.3 },
+	// 	2: { min: 1.4, max: 1.6 },
+	// 	3: { min: 1.7, max: 1.9 },
+	// 	4: { min: 2.0, max: 2.2 },
+	// 	5: { min: 2.3, max: 2.5 },
+	// };
+	// const scaleRanges = {
+	// 	1: { min: 0.5, max: 0.7 },
+	// 	2: { min: 0.8, max: 1.0 },
+	// 	3: { min: 1.0, max: 1.2 },
+	// 	4: { min: 1.3, max: 1.5 },
+	// 	5: { min: 1.6, max: 1.8 },
+	// };
+	const scaleRanges = {
+		1: { min: 0, max: 0.4 },
+		2: { min: 0.4, max: 0.8 },
+		3: { min: 0.8, max: 1.2 },
+		4: { min: 1.2, max: 1.6 },
+		5: { min: 1.6, max: 2.0 },
+	};
+
+	// Obtener el rango de escala para el nivel dado
+	const { min, max } = scaleRanges[level];
+
+	// Generar un valor aleatorio de escala dentro del rango específico
+	const randomScale = Math.random() * (max - min) + min;
+
+	return randomScale;
+};
+
+const getRandomPosition = (minPercent = 1, maxPercent = 100) => {
+	// Generar un número aleatorio entre 0 y 1
+	const randomChance = Math.random();
+
+	// Si el número aleatorio es menor que 0.5, devuelve { x: 0, y: 0 }
+	if (randomChance < 0.5) {
+		return { x: '0', y: '0' };
+	}
+
+	// Generar un número aleatorio entre minPercent y maxPercent para x e y
+	const randomPercentX = Math.random() * (maxPercent - minPercent) + minPercent;
+	const randomPercentY = Math.random() * (maxPercent - minPercent) + minPercent;
+
+	// Convertir el porcentaje aleatorio a string
+	const randomX = randomPercentX.toFixed(2) + '%';
+	const randomY = randomPercentY.toFixed(2) + '%';
+
+	return { x: randomX, y: randomY };
+};
+
+const getRandomScaleAndPosition = () => {
+	// Generar un número aleatorio entre 0 y 1
+	const randomChance = Math.random();
+
+	// Si el número aleatorio es menor que 0.5, devuelve scale 1 y posición 0
+	if (randomChance < 0.5) {
+		return { scale: 1, x: '0%', y: '0%' };
+	}
+
+	// Generar una escala aleatoria entre 1.1 y 2
+	const randomScale = Math.random() * (2 - 1.1) + 1.1;
+
+	// Calcular el porcentaje máximo basado en la escala
+	const maxPercent = (randomScale - 1) * 100;
+
+	// Generar un número aleatorio entre 0 y el porcentaje máximo para x e y
+	const randomPercentX = (Math.random() * maxPercent) / 2;
+	const randomPercentY = (Math.random() * maxPercent) / 2;
+
+	// Convertir los porcentajes aleatorios a strings
+	const randomX = randomPercentX.toFixed(2) + '%';
+	const randomY = randomPercentY.toFixed(2) + '%';
+
+	return { scale: randomScale, x: randomX, y: randomY };
+};
+
+const getRandomDuration = (min = 0.8, max = 2.0) => {
+	// Genera un valor aleatorio de duración dentro del rango específico
+	const randomDuration = Math.random() * (max - min) + min;
+
+	// Redondea el valor a un decimal
+	const roundedDuration = Math.round(randomDuration * 10) / 10;
+
+	return roundedDuration;
+};
+
+const generateRandomAnimation = () => {
+	const getRandomDuration = (min = 0.8, max = 2.0) => {
+		// Genera un valor aleatorio de duración dentro del rango específico
+		const randomDuration = Math.random() * (max - min) + min;
+
+		// Redondea el valor a un decimal
+		const roundedDuration = Math.round(randomDuration * 10) / 10;
+
+		return roundedDuration;
+	};
+
+	const getRandomScale = (level) => {
+		// Si no se proporciona el nivel, generamos uno aleatorio entre 1 y 5
+		if (level === undefined) {
+			level = Math.floor(Math.random() * 5) + 1;
+		}
+
+		// Generar un número aleatorio entre 0 y 1
+		const randomChance = Math.random();
+
+		// Si el número aleatorio es menor que 0.5, devuelve 1 (sin efecto de escala)
+		if (randomChance < 0.5) {
+			return 1;
+		}
+
+		// Define los rangos de escala para cada nivel de importancia
+		const scaleRanges = {
+			1: { min: 0, max: 0.4 },
+			2: { min: 0.4, max: 0.8 },
+			3: { min: 0.8, max: 1.2 },
+			4: { min: 1.2, max: 1.6 },
+			5: { min: 1.6, max: 2.0 },
+		};
+
+		// Obtener el rango de escala para el nivel dado
+		const { min, max } = scaleRanges[level];
+
+		// Generar un valor aleatorio de escala dentro del rango específico
+		const randomScale = Math.random() * (max - min) + min;
+
+		return randomScale;
+	};
+
+	return {
+		hidden: {
+			opacity: 0,
+			x: Math.random() * 150 - 50,
+			y: Math.random() * 150 - 50,
+			scale: getRandomScale(),
+		},
+		show: {
+			opacity: 1,
+			x: 0,
+			y: 0,
+			scale: 1,
+			transition: {
+				type: 'ease',
+				ease: 'easeInOut',
+				duration: getRandomDuration(),
+			},
+		},
+	};
+};
+
+const totalElements = 5;
+const totalRows = 3;
+const totalColumns = 3;
 
 const RandomCard = ({
 	index,
@@ -371,21 +426,28 @@ const RandomCard = ({
 	loader,
 	animation,
 }) => {
-	const { backgroundColor, textColor } = image
-		? { backgroundColor: '#333333', textColor: '#ffffff' }
-		: getRandomColor();
-
-	const animations = {
-		// opacity: Math.random(),
-		// scale: Math.random(),
-		// rotate: Math.random() * 360,
-		// x: Math.random() * 20 - 10, // Random horizontal shift between -10 and 10 pixels
-		// y: Math.random() * 20 - 10, // Random vertical shift between -10 and 10 pixels
-	};
+	const textColor = '#ffffff';
 	const randomOrderAndAlign = generateRandomOrderAndAlign(totalElements);
-
+	const { backgroundColor } = getRandomColor();
 	const randomPositions = generateRandomPositions(totalElements, totalRows, totalColumns);
+	const randomScale = getRandomScale();
+	// const generateRandomAnimation = () => ({
+	// 	hidden: {
+	// 		opacity: 0,
+	// 		x: Math.random() * 150 - 50,
+	// 		y: Math.random() * 150 - 50,
+	// 		scale: getRandomScale(),
+	// 	},
+	// 	show: {
+	// 		opacity: 1,
+	// 		x: 0,
+	// 		y: 0,
+	// 		scale: 1,
+	// 		transition: { duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 },
+	// 	},
+	// });
 
+	const { scale, x, y } = getRandomScaleAndPosition();
 	return (
 		<CardContainer>
 			{video ? (
@@ -393,25 +455,43 @@ const RandomCard = ({
 					src={video}
 					width={size}
 					height={size}
-					autoPlay 
-					loop 
+					autoPlay
+					loop
 					muted
+					initial={{ opacity: 0.3, scale, x, y }}
+					whileInView={{ opacity: 1, ...getRandomScaleAndPosition() }}
+					transition={{ ease: 'easeInOut', duration: getRandomDuration() }}
 				/>
 			) : image ? (
-				<Image src={image} width={size} height={size} />
+				<Image
+					src={image}
+					width={size}
+					height={size}
+					initial={{ opacity: 0.3, scale, x, y }}
+					whileInView={{ opacity: 1, ...getRandomScaleAndPosition() }}
+					transition={{ ease: 'easeInOut', duration: getRandomDuration() }}
+				/>
 			) : (
-				<Background color={backgroundColor} />
+				''
 			)}
-			{/* {image ? <Image src={image} width={size} height={size} /> : <Background color={backgroundColor} />} */}
-			{/* {image ? <Image src={image} width={size} height={size} /> : <Background color={backgroundColor} />} */}
-			{/* {images && images.map((img, index) => <Image key={index} src={img} width={size} height={size} />)} */}
-			{/* {video && <Video src={video} width={size} height={size} />} */}
-			{/* {videos && videos.map((vid, index) => <Video key={index} src={vid} width={size} height={size} />)} */}
+
 			<Info
-				initial={{ opacity: 0, x: 100 }}
-				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ amount: 0.5 }}
-				transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+				// initial={{ opacity: 0, x: 100 }}
+				// whileInView={{ opacity: 1, x: 0 }}
+				// viewport={{ amount: 0.3 }}
+				// transition={{duration:getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
+				variants={{
+					show: {
+						transition: {
+							ease: 'easeInOut',
+							duration: getRandomDuration(),
+							staggerChildren: 0.4,
+							delayChildren: 0.4,
+						},
+					},
+				}}
+				initial='hidden'
+				whileInView={'show'}
 			>
 				{title && (
 					<Title
@@ -421,10 +501,12 @@ const RandomCard = ({
 						gridrow={randomPositions[0].row}
 						alignSelf={randomOrderAndAlign[0].alignSelf}
 						order={randomOrderAndAlign[0].order}
-						initial={{ opacity: 0, x: '-100%' }}
-						whileInView={{ opacity: 1, x: '0%' }}
-						viewport={{ amount: 0.5 }}
-						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						variants={generateRandomAnimation()}
+						// transition={{ duration: 0.5 }}
+						// initial={{ opacity: 0, x: '-100%' }}
+						// whileInView={{ opacity: 1, x: '0%' }}
+						// viewport={{ amount: 0.3 }}
+						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{title}
 					</Title>
@@ -437,10 +519,12 @@ const RandomCard = ({
 						gridrow={randomPositions[1].row}
 						alignSelf={randomOrderAndAlign[1].alignSelf}
 						order={randomOrderAndAlign[1].order}
-						initial={{ opacity: 0, y: -100 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ amount: 0.5 }}
-						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						variants={generateRandomAnimation()}
+						// transition={{ duration: 0.5 }}
+						// initial={{ opacity: 0, y: -100 }}
+						// whileInView={{ opacity: 1, y: 0 }}
+						// viewport={{ amount: 0.3 }}
+						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{subtitle}
 					</Subtitle>
@@ -453,10 +537,12 @@ const RandomCard = ({
 						gridrow={randomPositions[2].row}
 						alignSelf={randomOrderAndAlign[2].alignSelf}
 						order={randomOrderAndAlign[2].order}
-						initial={{ opacity: 0, x: 100 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ amount: 0.5 }}
-						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						variants={generateRandomAnimation()}
+						// transition={{ duration: 0.5 }}
+						// initial={{ opacity: 0, x: 100 }}
+						// whileInView={{ opacity: 1, x: 0 }}
+						// viewport={{ amount: 0.3 }}
+						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{description}
 					</Description>
@@ -469,10 +555,12 @@ const RandomCard = ({
 						gridrow={randomPositions[3].row}
 						alignSelf={randomOrderAndAlign[3].alignSelf}
 						order={randomOrderAndAlign[3].order}
-						initial={{ opacity: 0, y: 100 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ amount: 0.5 }}
-						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						variants={generateRandomAnimation()}
+						// transition={{ duration: 0.5 }}
+						// initial={{ opacity: 0, y: 100 }}
+						// whileInView={{ opacity: 1, y: 0 }}
+						// viewport={{ amount: 0.3 }}
+						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
 						{date}
 					</Date>
@@ -486,12 +574,14 @@ const RandomCard = ({
 						gridrow={randomPositions[4].row}
 						alignSelf={randomOrderAndAlign[4].alignSelf}
 						order={randomOrderAndAlign[4].order}
-						initial={{ opacity: 0, scale: 0.5 }}
-						whileInView={{ opacity: 1, scale: 1 }}
-						viewport={{ amount: 0.5 }}
-						transition={{ type: 'spring', stiffness: 100, damping: 30 }}
+						variants={generateRandomAnimation()}
+						// transition={{ duration: 0.5 }}
+						// initial={{ opacity: 0, scale: 0.5 }}
+						// whileInView={{ opacity: 1, scale: 1 }}
+						// viewport={{ amount: 0.3 }}
+						// transition={{ duration: getRandomDuration(), type: 'spring', stiffness: 100, damping: 30 }}
 					>
-						Link
+						{`Link ${link + index}`}
 					</Link>
 				)}
 			</Info>
