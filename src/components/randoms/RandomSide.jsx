@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const CardContainer = styled(motion.div)`
 	position: relative;
 	/* width: 100%; */
-	width: calc(100vw - 1px);
+	width: calc((100vw - 1px) / 2);
 	height: 100vh;
 	overflow: hidden;
 	background-color: #000000;
@@ -465,12 +465,21 @@ const generateRandomAnimation = () => {
 		},
 	};
 };
+const getRandomSelectedColor = () => {
+	// Define una lista de colores
+	const colors = ['white', 'black'];
 
+	// Genera un índice aleatorio para seleccionar un color de la lista
+	const randomIndex = Math.floor(Math.random() * colors.length);
+
+	// Devuelve el color seleccionado
+	return colors[randomIndex];
+};
 const totalElements = 5;
 const totalRows = 3;
 const totalColumns = 3;
 
-const RandomCard = ({
+const RandomSideCard = ({
 	index,
 	title,
 	subtitle,
@@ -723,4 +732,4 @@ const RandomCard = ({
 	);
 };
 
-export default RandomCard;
+export default RandomSideCard;

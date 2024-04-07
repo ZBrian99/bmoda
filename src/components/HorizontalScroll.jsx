@@ -3,6 +3,7 @@ import { motion, useTransform, useScroll, useSpring } from 'framer-motion';
 
 import '../styles/test.scss';
 import RandomCard from './randoms/RandomCard';
+import RandomSideCard from './randoms/RandomSide';
 
 const data = [
 	{
@@ -206,12 +207,12 @@ const data = [
 
 // Función para desordenar aleatoriamente un array
 function shuffleArray(array) {
-  const shuffledArray = [...array];
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-  }
-  return shuffledArray;
+	const shuffledArray = [...array];
+	for (let i = shuffledArray.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+	}
+	return shuffledArray;
 }
 
 //importante si se usan imagenes o elementos pesados como hijos dentro del scroll puede generar problemas de rendimiento, se puede buscar una solucion para cargar las imagenes de manera mas eficiente o optimizar de alguna manera, lo idea es imagenes muy livianas y contenido simple para un mejor rendimiento
@@ -282,9 +283,21 @@ export const HorizontalScroll = () => {
 					{/* Contenedor que se va a mover, todos los hijos seran quienes se vayan mostrando y style x representa un transform translateX(x) x va de 0 a -100% en este cado para un movimiento hacia da derecha */}
 					<motion.div style={{ x }} className='HorizontalScroll-Container '>
 						{/* mapeo de elementos */}
-						{shuffleArray(data).map((item, index) => (
-							<RandomCard key={index} index={index} {...item} />
-						))}
+						{/* {shuffleArray(data).map((item, index) => (
+							<>
+								<RandomCard key={index} index={index} {...item} />
+								<RandomSideCard key={index} index={index} {...item} />
+							</>
+						))} */}
+						{shuffleArray(
+							data.map((item, index) =>
+								index % 2 === 0 ? (
+									<RandomCard key={item.id || index} {...item} />
+								) : (
+									<RandomSideCard key={item.id || index} {...item} />
+								)
+							)
+						)}
 					</motion.div>
 				</div>
 			</section>
