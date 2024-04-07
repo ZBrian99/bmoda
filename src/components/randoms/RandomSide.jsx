@@ -8,7 +8,8 @@ import { motion } from 'framer-motion';
 const CardContainer = styled(motion.div)`
 	position: relative;
 	/* width: 100%; */
-	width: 50vw;
+	width: calc(50vw - 8.5px);
+
 	/* width: calc((100vw - 1px) * 0.5); */
 	@media screen and (max-width: 45rem) {
 		width: calc((100vw - 1px));
@@ -588,8 +589,8 @@ const RandomSideCard = ({
 							// type: 'ease',
 							// ease: 'easeInOut',
 							// duration: getRandomDuration(),
-							delayChildren: 0.5,
-							staggerChildren: 0.5,
+							delayChildren: 0.3,
+							staggerChildren: 0.3,
 						},
 					},
 					show: {
@@ -598,8 +599,8 @@ const RandomSideCard = ({
 							// type: 'ease',
 							// ease: 'easeInOut',
 							// duration: getRandomDuration(),
-							delayChildren: 0.5,
-							staggerChildren: 0.5,
+							delayChildren: 0.3,
+							staggerChildren: 0.3,
 						},
 					},
 				}}
@@ -607,8 +608,8 @@ const RandomSideCard = ({
 					// type: 'ease',
 					// ease: 'easeInOut',
 					// duration: getRandomDuration(),
-					delayChildren: 0.5,
-					staggerChildren: 0.5,
+					delayChildren: 0.3,
+					staggerChildren: 0.3,
 				}}
 			>
 				{index ? (

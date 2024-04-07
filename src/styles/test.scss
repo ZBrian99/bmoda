@@ -90,9 +90,12 @@
   background-size: cover;
   background-attachment: fixed;
 
-
 }
-
+.vertical {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .top {
 	height: 100vh;
 	width: 100%;

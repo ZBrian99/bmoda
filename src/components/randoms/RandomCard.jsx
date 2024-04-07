@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const CardContainer = styled(motion.div)`
 	position: relative;
 	/* width: 100%; */
-	width: calc(100vw - 1px);
+	width: calc(100vw - 17px);
 	height: 100vh;
 	overflow: hidden;
 `;

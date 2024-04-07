@@ -466,7 +466,9 @@ function shuffleArray(array) {
 	}
 	return shuffledArray;
 }
-
+function getRandomNumber() {
+	return Math.floor(Math.random() * 10) + 1;
+}
 //importante si se usan imagenes o elementos pesados como hijos dentro del scroll puede generar problemas de rendimiento, se puede buscar una solucion para cargar las imagenes de manera mas eficiente o optimizar de alguna manera, lo idea es imagenes muy livianas y contenido simple para un mejor rendimiento
 export const HorizontalScroll = () => {
 	//referencia al contenedor del scroll quien sera el que se mueva
@@ -503,7 +505,7 @@ export const HorizontalScroll = () => {
 
 	//ejemplo con efecto de resorte
 	//propiedad offset de useTransform posible solucione a todos los problemas
-	const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth*0.75]), {
+	const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth * 0.75]), {
 		// const x = useSpring(useTransform(scrollYProgress, [0, 1], [0, totalWidth]), {
 		//los siguientes valores se pueden modificar para obtener un efecto diferente de scroll
 		stiffness: 150,
@@ -517,26 +519,34 @@ export const HorizontalScroll = () => {
 			setInnerWidth(window.innerWidth);
 			console.log('reload size');
 		};
-		
+
 		window.addEventListener('resize', handleResize);
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
 
+	// Array que contiene instancias de los tres tipos de componentes
+	const components = [RandomCard, RandomSideMulty, RandomSideCard];
 
-// Array que contiene instancias de los tres tipos de componentes
-const components = [RandomCard, RandomSideMulty, RandomSideCard];
 	return (
 		//contenedor generico con componente generico para rellenar espacio
 		<div className='container'>
+			<div className='vertical'>
+				<RandomCard {...dataMulty[getRandomNumber()]} />
+				<RandomSideCard {...dataMulty[getRandomNumber()]} />
+				<RandomSideMulty {...dataMulty[getRandomNumber()]} />
+				<RandomSideMulty {...dataMulty[getRandomNumber()]} />
+				<RandomSideCard {...dataMulty[getRandomNumber()]} />
+				<RandomCard {...dataMulty[getRandomNumber()]} />
+			</div>
 			{/* empieza aqui */}
 			<section
 				ref={targetRef}
 				className='HorizontalScroll'
 				//importante el estilo para que el contenedor se ajuste al tamaño de los elementos, se puede modificar o buscar otra solucion para obtener el mismo resultado o uno diferente
 				style={{
-					height: ` calc((100vw - 17px) * ${dataOffset})`,
+					height: ` calc((100vw - 17px) * ${dataOffset/2})`,
 					// height: ` calc((100vw - 17px) * ${data.length - 1})`,
 				}}
 			>
@@ -548,10 +558,12 @@ const components = [RandomCard, RandomSideMulty, RandomSideCard];
 						{/* {shuffleArray(dataMulty).map((item, index) => (
 							<RandomCard key={index} index={index} {...item} />
 						))} */}
-						{shuffleArray(dataMulty.map((item, index) => {
-							const Component = components[Math.floor(Math.random() * components.length)];
-							return <Component key={index} index={index} {...item} />;
-						}))}
+						{shuffleArray(
+							dataMulty.map((item, index) => {
+								const Component = components[Math.floor(Math.random() * components.length)];
+								return <Component key={index} index={index} {...item} />;
+							})
+						)}
 						{/* {shuffleArray(
 							dataMulty.map((item, index) =>
 								index % 2 === 0 ? (
@@ -573,6 +585,14 @@ const components = [RandomCard, RandomSideMulty, RandomSideCard];
 					</motion.div>
 				</div>
 			</section>
+			<div className='vertical'>
+				<RandomCard {...dataMulty[getRandomNumber()]} />
+				<RandomSideCard {...dataMulty[getRandomNumber()]} />
+				<RandomSideMulty {...dataMulty[getRandomNumber()]} />
+				<RandomCard {...dataMulty[getRandomNumber()]} />
+				<RandomSideMulty {...dataMulty[getRandomNumber()]} />
+				<RandomSideCard {...dataMulty[getRandomNumber()]} />
+			</div>
 		</div>
 	);
 };
