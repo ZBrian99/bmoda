@@ -9,21 +9,27 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    
-    font-family: ${({theme})=>theme.fonts.desc};
+    font-family: ${({ theme }) => theme.fonts.desc};
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: ${({ theme }) => theme.colors.secondary}; */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png');
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${({theme})=>theme.fonts.titulo};
+    font-family: ${({ theme }) => theme.fonts.titulo};
   }
   
   p,input {
-  font-family: ${({theme})=>theme.fonts.desc};
-}
+  font-family: ${({ theme }) => theme.fonts.desc};
+  }
   span {
-    font-family: ${({theme})=>theme.fonts.aux};
+    font-family: ${({ theme }) => theme.fonts.aux};
   }
   button{
-    font-family: ${({theme})=>theme.fonts.sub};
+    font-family: ${({ theme }) => theme.fonts.desc};
   }
 `;

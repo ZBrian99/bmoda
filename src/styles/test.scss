@@ -1,0 +1,109 @@
+//componente padre principal
+.HorizontalScroll {
+	// !clave
+	position: relative;
+	//si la altura se calcula por fuera no es necesario ponerla aqui, pero si no se calcula cada multiplo es cada vista
+	// height: calc((100vw - 17px) * 7);
+	// !clave
+
+	// background-color: lightgrey;
+	&-Sticky {
+		// !clave
+		//clave style para que se quede pegado al top, overflow hidden para que no se vea el scroll, display flex para que los elementos se pongan uno al lado del otro y ocupen el 100% del ancho
+		position: sticky;
+		top: 0;
+		overflow: hidden;
+		display: flex;
+		// !clave
+		// gap: 1rem;
+		// background-color: #814141;
+  
+	}
+	&-Container {
+		// !clave
+		//para que cada elemento se ponga uno al lado del otro
+		display: flex;
+		// !clave
+		// gap: 1rem;
+		// background-color: #333;
+   
+	}
+	&-Item {
+		// !clave
+		//dependiendo el diseño restar los 17px puede no ser necesario es lo que mide la scrollbar
+		width: calc(100vw - 17px);
+		// width: 100vw;
+		// altura puede ser definida por el padre
+		height: 100vh;
+		// !clave
+
+		// background-color: lightgreen;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3rem;
+		font-weight: bold;
+		position: relative;
+
+		// border: 1px solid black;
+		background-color: lightgreen;
+		&:nth-child(even) {
+			background-color: lightsalmon;
+		}
+		//estilos de la card de ejemplo todos secundarios
+		&Image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: brightness(0.5);
+		}
+		&Info {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			padding: 5rem;
+			color: white;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		&Title {
+			font-size: 2rem;
+		}
+		&Price {
+			font-size: 1rem;
+		}
+	}
+}
+
+//estilos genericos de prueba
+
+.container {
+	// background-color: lightslategray;
+	// background-color: #000000;
+  // background-image: url('src/assets/boda/boda_15.webp');
+  background-repeat: no-repeat;
+  // background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.vertical {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.top {
+	height: 100vh;
+	width: 100%;
+	background-color: lightcoral;
+}
+
+.bottom {
+	background-color: lightblue;
+	height: 100vh;
+	width: 100%;
+}
