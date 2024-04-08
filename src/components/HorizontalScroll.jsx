@@ -517,7 +517,7 @@ export const HorizontalScroll = () => {
 	useEffect(() => {
 		const handleResize = () => {
 			setInnerWidth(window.innerWidth);
-			console.log('reload size');
+			console.log('reload size', window.innerWidth);
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -540,31 +540,31 @@ export const HorizontalScroll = () => {
 				<RandomSideCard {...dataMulty[getRandomNumber()]} />
 				<RandomCard {...dataMulty[getRandomNumber()]} />
 			</div>
-			{/* empieza aqui */}
-			<section
-				ref={targetRef}
-				className='HorizontalScroll'
-				//importante el estilo para que el contenedor se ajuste al tamaño de los elementos, se puede modificar o buscar otra solucion para obtener el mismo resultado o uno diferente
-				style={{
-					height: ` calc((100vw - 17px) * ${dataOffset/2})`,
-					// height: ` calc((100vw - 17px) * ${data.length - 1})`,
-				}}
-			>
-				{/* contenedor sticky padre del contenedor que se va a mover */}
-				<div className='HorizontalScroll-Sticky'>
-					{/* Contenedor que se va a mover, todos los hijos seran quienes se vayan mostrando y style x representa un transform translateX(x) x va de 0 a -100% en este cado para un movimiento hacia da derecha */}
-					<motion.div style={{ x }} className='HorizontalScroll-Container '>
-						{/* mapeo de elementos */}
-						{/* {shuffleArray(dataMulty).map((item, index) => (
+			{innerWidth > 960 ? (
+				<section
+					ref={targetRef}
+					className='HorizontalScroll'
+					//importante el estilo para que el contenedor se ajuste al tamaño de los elementos, se puede modificar o buscar otra solucion para obtener el mismo resultado o uno diferente
+					style={{
+						height: ` calc((100vw - 17px) * ${dataOffset / 2})`,
+						// height: ` calc((100vw - 17px) * ${data.length - 1})`,
+					}}
+				>
+					{/* contenedor sticky padre del contenedor que se va a mover */}
+					<div className='HorizontalScroll-Sticky'>
+						{/* Contenedor que se va a mover, todos los hijos seran quienes se vayan mostrando y style x representa un transform translateX(x) x va de 0 a -100% en este cado para un movimiento hacia da derecha */}
+						<motion.div style={{ x }} className='HorizontalScroll-Container '>
+							{/* mapeo de elementos */}
+							{/* {shuffleArray(dataMulty).map((item, index) => (
 							<RandomCard key={index} index={index} {...item} />
 						))} */}
-						{shuffleArray(
-							dataMulty.map((item, index) => {
-								const Component = components[Math.floor(Math.random() * components.length)];
-								return <Component key={index} index={index} {...item} />;
-							})
-						)}
-						{/* {shuffleArray(
+							{shuffleArray(
+								dataMulty.map((item, index) => {
+									const Component = components[Math.floor(Math.random() * components.length)];
+									return <Component key={index} index={index} {...item} />;
+								})
+							)}
+							{/* {shuffleArray(
 							dataMulty.map((item, index) =>
 								index % 2 === 0 ? (
 									<RandomSideMulty key={index} index={index} {...item} />
@@ -582,9 +582,20 @@ export const HorizontalScroll = () => {
 								)
 							)
 						)} */}
-					</motion.div>
+						</motion.div>
+					</div>
+				</section>
+			) : (
+				<div className='vertical'>
+					{shuffleArray(
+						dataMulty.map((item, index) => {
+							const Component = components[Math.floor(Math.random() * components.length)];
+							return <Component key={index} index={index} {...item} />;
+						})
+					)}
 				</div>
-			</section>
+			)}
+
 			<div className='vertical'>
 				<RandomCard {...dataMulty[getRandomNumber()]} />
 				<RandomSideCard {...dataMulty[getRandomNumber()]} />

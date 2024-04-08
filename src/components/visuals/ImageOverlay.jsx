@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 //
 const Layout = styled.div`
-background-image: url(${({ imagen }) => imagen});
+/* background-image: url(${({ imagen }) => imagen}); */
 color:${({ theme }) => theme.colors.white};
 width: 100%;
 height: 100vh;
@@ -67,7 +67,7 @@ const CoveredLayer = styled(motion.div)`
     right: 0;
     bottom: 0;
     left: 0;
-    background-color:${({ theme }) => theme.colors.black};
+    /* background-color:${({ theme }) => theme.colors.black}; */
     z-index: 2;
 `
 

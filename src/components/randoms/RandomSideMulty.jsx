@@ -13,7 +13,7 @@ const CardContainer = styled(motion.div)`
 	height: 100vh;
 	overflow: hidden;
 	padding: 3rem;
-	background-color: ${({ bgColor }) => bgColor};
+	/* background-color: ${({ bgColor }) => bgColor}; */
 `;
 
 const MediaContainer = styled(motion.div)`
@@ -38,7 +38,7 @@ const Background = styled.div`
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-	background-color: #0a0a0a;
+	/* background-color: #0a0a0a; */
 	/* opacity: 0.2; */
 `;
 const Image = styled(motion.img)`
@@ -334,14 +334,14 @@ const RandomSideMulty = ({
 	const rowAssignments = assignRandomRows(totalElements);
 	const columnAssignments = assignRandomColumns(totalElements);
 	const spanAssignments = Array.from({ length: totalElements }, () => Math.floor(Math.random() * 3) + 1);
-const {primary} = chooseRandomColor();
+	const { primary } = { primary: '#000000' };
 	return (
 		<CardContainer
 			initial='hidden'
 			whileInView='show'
 			exit='hidden'
 			viewport={{ amount: 0.5 }}
-			bgColor={primary}
+			// bgColor={primary}
 		>
 			<MediaContainer>
 				{videos

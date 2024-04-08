@@ -116,8 +116,8 @@ const Background = styled.div`
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-	/* background-color: #0a0a0a; */
-	background-color: ${({ bgColor }) => bgColor};
+	/* background-color: #0a0a0a44; */
+	background-color: ${({ bgColor }) => bgColor}; 
 	/* opacity: 0.2; */
 `;
 const Image = styled(motion.img)`
@@ -501,9 +501,10 @@ const RandomSideCard = ({
 	const randomPositions = generateRandomPositions(totalElements, totalRows, totalColumns);
 	const randomScale = getRandomScale();
 	const { scale, x, y } = getRandomScaleAndPosition();
-	const { primary, secondary } = chooseRandomColor();
+	// const { primary, secondary } = chooseRandomColor();
+	const { primary, secondary } = { primary: '#000000', secondary: '#ffffff' };
 	return (
-		<CardContainer initial='hidden' whileInView='show' exit='hidden' viewport={{ amount: 0.5 }}>
+		<CardContainer initial='hidden' whileInView='show' exit='hidden' viewport={{ amount: 0.5, once: true }}>
 			{/* {video ? (
 				<Video
 					src={video}
@@ -589,7 +590,8 @@ const RandomSideCard = ({
 							// type: 'ease',
 							// ease: 'easeInOut',
 							// duration: getRandomDuration(),
-							delayChildren: 0.3,
+							// delayChildren: 0.3,
+
 							staggerChildren: 0.3,
 						},
 					},
@@ -599,7 +601,8 @@ const RandomSideCard = ({
 							// type: 'ease',
 							// ease: 'easeInOut',
 							// duration: getRandomDuration(),
-							delayChildren: 0.3,
+							// delayChildren: 0.3,
+
 							staggerChildren: 0.3,
 						},
 					},
@@ -608,7 +611,8 @@ const RandomSideCard = ({
 					// type: 'ease',
 					// ease: 'easeInOut',
 					// duration: getRandomDuration(),
-					delayChildren: 0.3,
+					// delayChildren: 0.3,
+
 					staggerChildren: 0.3,
 				}}
 			>

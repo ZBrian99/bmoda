@@ -492,7 +492,7 @@ const RandomCard = ({
 	const { scale, x, y } = getRandomScaleAndPosition();
 
 	return (
-		<CardContainer initial='hidden' whileInView='show' exit='hidden' viewport={{ amount: 0.5 }}>
+		<CardContainer initial='hidden' whileInView='show' exit='hidden' viewport={{ amount: 0.5, once: true }}>
 			{video ? (
 				<Video
 					src={video}

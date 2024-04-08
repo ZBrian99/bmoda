@@ -14,7 +14,9 @@ export const GlobalStyles = createGlobalStyle`
     /* flex-wrap: wrap; */
     width: 100%;
     min-height: 100vh;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    /* background-color: ${({ theme }) => theme.colors.secondary}; */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png');
+    background-attachment: fixed;
   }
   
   h1, h2, h3, h4, h5, h6 {
