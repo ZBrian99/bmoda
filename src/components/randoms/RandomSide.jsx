@@ -381,7 +381,7 @@ const RandomSideCard = ({ index, title, subtitle, description, date, link }) => 
 							duration: getRandomDuration(),
 						}}
 					>
-						{` ${index} ${title ? title : ''}`}
+						{title ? title : ''}
 					</Title>
 				) : subtitle ? (
 					<Subtitle

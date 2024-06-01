@@ -506,7 +506,7 @@ const RandomCard = ({
 							duration: getRandomDuration(),
 						}}
 					>
-						{` ${index} ${title ? title : ''}`}
+						{title ? title : ''}
 					</Title>
 				)}
 				{subtitle && (
