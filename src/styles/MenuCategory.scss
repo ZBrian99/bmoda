@@ -6,8 +6,8 @@
 	width: 100%;
 	height: 100vh;
 	gap: 1rem;
-	transition: clip-path 0.8s ease; // Transición para el clip-path
-	background-color: #111;
+	transition: clip-path 0.8s ease;
+	background-color: #222;
 	clip-path: circle(0% at calc(100% - 2.5rem) calc(100% - 2.5rem));
 	color: white;
 	position: fixed;
@@ -15,9 +15,7 @@
 		width: 3rem;
 		height: 3rem;
 		background-color: #111;
-		// background-color: transparent;
-			box-shadow: 0 0 1px 1px #000000;
-
+		font-size: 1.5em;
 		color: white;
 		border-radius: 50%;
 		border: none;
@@ -27,15 +25,7 @@
 		position: fixed;
 		z-index: 11;
 
-		&:hover {
-			cursor: pointer;
-			box-shadow: 0 0 4px 4px #000000;
-		}
-		&Active {
-			box-shadow: 0 0 4px 4px #000000;
-		}
-
-		transition: box-shadow .5s ease-in-out;
+		cursor: pointer;
 	}
 
 	&-Title {
@@ -64,6 +54,6 @@
 	}
 
 	&.isVisible {
-		clip-path: circle(150% at calc(100% - 2.5rem) calc(100% - 2.5rem)); // Clip-path expandiéndose
+		clip-path: circle(150% at calc(100% - 2.5rem) calc(100% - 2.5rem));
 	}
 }

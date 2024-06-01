@@ -1,0 +1,201 @@
+{
+	"dataMulty": [
+		{
+			"title": "Recuerdos de nuestra boda",
+			"subtitle": "Compartiendo momentos inolvidables",
+			"description": "Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.",
+			"date": "2024-04-06",
+			"link": "#",
+			"images": ["/assets/boda/boda_0.webp", "/assets/boda/boda_0.webp", "/assets/boda/boda_0.webp"],
+			"videos": ["/assets/videos/video_0.mp4", "/assets/videos/video_5.mp4", "/assets/videos/video_6.mp4"],
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_5.webp", "/assets/boda/boda_1.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Romanticismo en nuestra boda",
+			"subtitle": "Celebrando nuestro amor frente a la naturaleza",
+			"date": "2024-04-07",
+			"images": ["/assets/boda/boda_13.webp", "/assets/boda/boda_15.webp", "/assets/boda/boda_4.webp"],
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Descubriendo la belleza del amor",
+			"description": "Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.",
+			"date": "2024-04-08",
+			"link": "#",
+			"images": ["/assets/boda/boda_3.webp", "/assets/boda/boda_3.webp", "/assets/boda/boda_0.webp"],
+			"videos": ["/assets/videos/video_9.mp4", "/assets/videos/video_8.mp4", "/assets/videos/video_7.mp4"],
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"description": "Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.",
+			"date": "2024-04-09",
+			"images": ["/assets/boda/boda_4.webp", "/assets/boda/boda_5.webp", "/assets/boda/boda_8.webp"],
+			"loader": true,
+			"animation": "y"
+		},
+		{
+			"title": "Recuerdos de nuestra boda",
+			"subtitle": "Compartiendo momentos inolvidables",
+			"description": "Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.",
+			"date": "2024-04-06",
+			"link": "#",
+			"images": ["/assets/boda/boda_2.webp", "/assets/boda/boda_9.webp", "/assets/boda/boda_0.webp"],
+			"videos": ["/assets/videos/video_3.mp4", "/assets/videos/video_9.mp4", "/assets/videos/video_1.mp4"],
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_7.webp", "/assets/boda/boda_3.webp", "/assets/boda/boda_0.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Romanticismo en nuestra boda",
+			"subtitle": "Celebrando nuestro amor frente a la naturaleza",
+			"date": "2024-04-07",
+			"images": ["/assets/boda/boda_2.webp", "/assets/boda/boda_5.webp", "/assets/boda/boda_6.webp"],
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Descubriendo la belleza del amor",
+			"description": "Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.",
+			"date": "2024-04-08",
+			"link": "#",
+			"images": [
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_0.webp",
+				"/assets/boda/boda_0.webp"
+			],
+			"videos": ["/assets/videos/video_0.mp4", "/assets/videos/video_5.mp4", "/assets/videos/video_1.mp4"],
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"description": "Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.",
+			"date": "2024-04-09",
+			"images": ["/assets/boda/boda_4.webp", "/assets/boda/boda_8.webp", "/assets/boda/boda_5.webp"],
+			"loader": true,
+			"animation": "y"
+		},
+		{
+			"title": "Recuerdos de nuestra boda",
+			"subtitle": "Compartiendo momentos inolvidables",
+			"description": "Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.",
+			"date": "2024-04-06",
+			"link": "#",
+			"images": ["/assets/boda/boda_0.webp", "/assets/boda/boda_0.webp", "/assets/boda/boda_0.webp"],
+			"videos": ["/assets/videos/video_0.mp4", "/assets/videos/video_1.mp4", "/assets/videos/video_2.mp4"],
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_6.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_6.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_6.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_6.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Romanticismo en nuestra boda",
+			"subtitle": "Celebrando nuestro amor frente a la naturaleza",
+			"date": "2024-04-07",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_2.webp", "/assets/boda/boda_6.webp"],
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Descubriendo la belleza del amor",
+			"description": "Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.",
+			"date": "2024-04-08",
+			"link": "#",
+			"images": [
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_0.webp",
+				"/assets/boda/boda_0.webp"
+			],
+			"videos": ["/assets/videos/video_5.mp4", "/assets/videos/video_0.mp4", "/assets/videos/video_1.mp4"],
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_6.webp", "/assets/boda/boda_7.webp"],
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Romanticismo en nuestra boda",
+			"subtitle": "Celebrando nuestro amor frente a la naturaleza",
+			"date": "2024-04-07",
+			"images": ["/assets/boda/boda_1.webp", "/assets/boda/boda_2.webp", "/assets/boda/boda_6.webp"],
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Descubriendo la belleza del amor",
+			"description": "Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.",
+			"date": "2024-04-08",
+			"link": "#",
+			"images": [
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_3.webp",
+				"/assets/boda/boda_0.webp",
+				"/assets/boda/boda_0.webp"
+			],
+			"videos": ["/assets/videos/video_5.mp4", "/assets/videos/video_0.mp4", "/assets/videos/video_1.mp4"],
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"description": "Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.",
+			"date": "2024-04-09",
+			"images": ["/assets/boda/boda_6.webp", "/assets/boda/boda_8.webp", "/assets/boda/boda_4.webp"],
+			"loader": true,
+			"animation": "y"
+		}
+	]
+}

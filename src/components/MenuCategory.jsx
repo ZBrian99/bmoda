@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../styles/MenuCategory.scss';
-// Importar el archivo de estilos Sass
 
 export const MenuCategory = () => {
 	const [isActive, setIsActive] = useState(false);
@@ -24,13 +23,13 @@ export const MenuCategory = () => {
 				className={`MenuCategory-Button ${isActive && 'MenuCategory-ButtonActive'}`}
 				onClick={handleToggleClick}
 				whileHover={{
-					scale: 1.1,
-					y: -3,
+					scale: 1.05,
+					y: -1,
 				}}
-				whileTap={{ scale: 0.9 }}
-				transition={{ type: 'spring', stiffness: 200, duration: 0.4 }}
+				whileTap={{ scale: 0.95 }}
+				transition={{ duration: 0.1, ease: 'easeInOut' }}
 			>
-				X
+				{isActive ? 'X' : '☰'}
 			</motion.button>
 
 			<motion.div className={`MenuCategory ${isActive ? 'isVisible' : ''}`}>

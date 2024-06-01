@@ -10,11 +10,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.fonts.desc};
-    /* display: flex; */
-    /* flex-wrap: wrap; */
     width: 100%;
     min-height: 100vh;
-    /* background-color: ${({ theme }) => theme.colors.secondary}; */
     background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png');
     background-attachment: fixed;
   }

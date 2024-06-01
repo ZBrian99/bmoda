@@ -1,0 +1,198 @@
+{
+	"data": [
+		{
+			"title": "Recuerdos de nuestra boda",
+			"subtitle": "Compartiendo momentos inolvidables",
+			"description": "Un día lleno de amor y felicidad mientras celebramos el inicio de nuestra vida juntos. Cada sonrisa, cada abrazo y cada lágrima de alegría quedará grabada en nuestros corazones para siempre.",
+			"date": "2024-04-06",
+			"link": "#",
+			"image": "/assets/boda/boda_0.webp",
+			"video": "/assets/videos/video_0.mp4",
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Unión familiar en nuestra boda",
+			"description": "Un día de unión y felicidad junto a nuestros seres queridos, compartiendo risas y creando recuerdos que perdurarán por generaciones.",
+			"link": "#",
+			"image": "/assets/boda/boda_1.webp",
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Romanticismo en nuestra boda",
+			"subtitle": "Celebrando nuestro amor frente a la naturaleza",
+			"date": "2024-04-07",
+			"image": "/assets/boda/boda_2.webp",
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Descubriendo la belleza del amor",
+			"description": "Cada momento está lleno de emoción mientras damos el primer paso hacia nuestro futuro juntos. Nuestros corazones están llenos de esperanza y nuestras almas rebosan de amor.",
+			"date": "2024-04-08",
+			"link": "#",
+			"image": "/assets/boda/boda_3.webp",
+			"video": "/assets/videos/video_1.mp4",
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"description": "Un día de pura alegría mientras celebramos el amor que nos une. Cada risa y cada mirada reflejan la felicidad que compartimos en este día especial.",
+			"date": "2024-04-09",
+			"image": "/assets/boda/boda_4.webp",
+			"loader": true,
+			"animation": "y"
+		},
+		{
+			"title": "Amor en nuestra boda",
+			"subtitle": "Explorando juntos el camino del amor",
+			"date": "2024-04-10",
+			"link": "#",
+			"image": "/assets/boda/boda_5.webp",
+			"video": "/assets/videos/video_2.mp4",
+			"loader": false,
+			"animation": "opacity"
+		},
+		{
+			"title": "Complicidad en nuestra boda",
+			"subtitle": "Disfrutando de cada momento juntos",
+			"description": "Cada instante está lleno de complicidad mientras nos adentramos en esta nueva etapa de nuestras vidas.",
+			"date": "2024-04-11",
+			"image": "/assets/boda/boda_6.webp",
+			"loader": true,
+			"animation": "fade"
+		},
+		{
+			"title": "Aventura en nuestra boda",
+			"subtitle": "Explorando el mundo del amor",
+			"date": "2024-04-12",
+			"image": "/assets/boda/boda_7.webp",
+			"loader": false,
+			"animation": "rotate"
+		},
+		{
+			"title": "Felicidad en nuestra boda",
+			"subtitle": "Disfrutando del comienzo de nuestra historia",
+			"description": "Cada momento está lleno de felicidad mientras celebramos el amor que nos une.",
+			"date": "2024-04-13",
+			"link": "#",
+			"image": "/assets/boda/boda_8.webp",
+			"video": "/assets/videos/video_3.mp4",
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"title": "Celebración en nuestra boda",
+			"date": "2024-04-14",
+			"image": "/assets/boda/boda_9.webp",
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"title": "Compromiso en nuestra boda",
+			"subtitle": "Construyendo un futuro juntos",
+			"date": "2024-04-15",
+			"link": "#",
+			"image": "/assets/boda/boda_10.webp",
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Promesas de amor en nuestra boda",
+			"subtitle": "Comprometiéndonos a caminar juntos",
+			"date": "2024-04-21",
+			"image": "/assets/boda/boda_16.webp",
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Pasión en nuestra boda",
+			"subtitle": "Celebrando el amor con intensidad",
+			"description": "Cada mirada y cada gesto está lleno de pasión mientras celebramos nuestra unión en este día tan especial.",
+			"date": "2024-04-16",
+			"image": "/assets/boda/boda_11.webp",
+			"video": "/assets/videos/video_4.mp4",
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Amistad en nuestra boda",
+			"subtitle": "Compartiendo este día con amigos cercanos",
+			"description": "La amistad se une al amor en este día especial, mientras celebramos rodeados de amigos cercanos.",
+			"date": "2024-04-17",
+			"link": "#",
+			"image": "/assets/boda/boda_12.webp",
+			"video": "/assets/videos/video_5.mp4",
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"title": "Complicidad en nuestra boda",
+			"subtitle": "Compartiendo risas y secretos",
+			"description": "Cada momento está lleno de complicidad mientras nos adentramos en esta nueva etapa de nuestras vidas.",
+			"date": "2024-04-18",
+			"image": "/assets/boda/boda_13.webp",
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"title": "Amor eterno en nuestra boda",
+			"subtitle": "Celebrando la unión para siempre",
+			"description": "En este día especial, prometemos amarnos y cuidarnos el uno al otro por toda la eternidad.",
+			"date": "2024-04-19",
+			"link": "#",
+			"image": "/assets/boda/boda_14.webp",
+			"video": "/assets/videos/video_6.mp4",
+			"loader": true,
+			"animation": "y"
+		},
+		{
+			"title": "Complicidad en nuestra boda",
+			"subtitle": "Disfrutando de cada momento juntos",
+			"description": "Cada instante está lleno de complicidad mientras nos adentramos en esta nueva etapa de nuestras vidas.",
+			"date": "2024-04-20",
+			"link": "#",
+			"image": "/assets/boda/boda_15.webp",
+			"loader": false,
+			"animation": "fade"
+		},
+		{
+			"title": "Promesas de amor en nuestra boda",
+			"subtitle": "Comprometiéndonos a caminar juntos",
+			"date": "2024-04-21",
+			"image": "/assets/boda/boda_16.webp",
+			"loader": true,
+			"animation": "rotate"
+		},
+		{
+			"title": "Celebración en nuestra boda",
+			"subtitle": "Disfrutando de cada momento juntos",
+			"date": "2024-04-22",
+			"link": "#",
+			"image": "/assets/boda/boda_17.webp",
+			"video": "/assets/videos/video_7.mp4",
+			"loader": true,
+			"animation": "scale"
+		},
+		{
+			"subtitle": "Disfrutando de cada momento juntos",
+			"description": "Cada instante está lleno de complicidad mientras nos adentramos en esta nueva etapa de nuestras vidas.",
+			"date": "2024-04-23",
+			"image": "/assets/boda/boda_18.webp",
+			"video": "/assets/videos/video_8.mp4",
+			"loader": false,
+			"animation": "x"
+		},
+		{
+			"title": "Juntos para siempre en nuestra boda",
+			"description": "En este día especial, celebramos nuestro amor y nuestra unión, prometiendo estar juntos para siempre.",
+			"date": "2024-04-24",
+			"link": "#",
+			"image": "/assets/boda/boda_19.webp",
+			"video": "/assets/videos/video_9.mp4",
+			"loader": true,
+			"animation": "y"
+		}
+	]
+}
