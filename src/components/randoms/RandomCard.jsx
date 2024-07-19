@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 const CardContainer = styled(motion.div)`
 	position: relative;
 	/* width: 100%; */
-	width: calc(100vw - 17px);
 	height: 100vh;
 	overflow: hidden;
+	@media screen and (min-width: 60rem) {
+		width: calc(100vw - 17px);
+	}
 `;
 
 const Info = styled(motion.div)`
@@ -108,7 +110,7 @@ const Image = styled(motion.img)`
 	height: 100%;
 	object-fit: cover;
 	object-position: center center;
-	top: 0;
+	top: 0;                                                                                      
 	left: 0;
 	z-index: 1;
 	border: none;

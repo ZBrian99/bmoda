@@ -45,7 +45,7 @@ export const HorizontalScroll = () => {
 	useEffect(() => {
 		const handleResize = () => {
 			setInnerWidth(window.innerWidth);
-			console.log('reload size', window.innerWidth);
+			// console.log('reload size', window.innerWidth);
 		};
 
 		window.addEventListener('resize', handleResize);
